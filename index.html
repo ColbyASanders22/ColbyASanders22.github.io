@@ -5,7 +5,39 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home Page</title>
 	<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="styles/mainhome.css">
+	
+	<style>
+		body {
+			background-color: teal;
+			font-family: Arial, sans-serif;
+			color: black;
+			margin: 0 auto;
+			max-width: 900px;
+			width: 90%;
+		}
+
+		h1, h2 {
+			text-align: center;
+			font-family:'Courier New', Courier, monospace;
+		}
+
+		p {
+			text-align: center;
+		}
+
+		ul {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+		}
+		.footer-links {
+			justify-content: center;
+			display: flex;
+		}
+	</style>
+	
 </head>
 <body>
 	        <nav>
@@ -19,10 +51,12 @@
 		<h1>Hi I'm Colby and this is my home page!</h1>
 	</header>
 	<footer>
-		<ul>
+		<ul class="footer-links">
 			<li><a href="https://webpages.charlotte.edu/csande53/">UNCC Homepage</a></li>
 			<li><a href="https://github.com/ColbyASanders22/ColbyASanders22.github.io">Github Repository</a></li>
 			<li><a href="itis3135/index.html">ITIS 3135 Course Page</a></li>
+		</ul>
+		<ul class="footer-links">
 			<li><a href="https://www.freecodecamp.org/csande53">FreeCodeCamp</a></li>
 			<li><a href="https://www.codecademy.com/profiles/csande53">CodeAcademy</a></li>
 			<li><a href="www.linkedin.com/in/colby-sandersLinkedIn">LinkedIn</a></li>
