@@ -1,5 +1,5 @@
 body {
-    background-color: #76818E;
+    background-color: #2E3338;
 }
 
 h1 {
@@ -13,6 +13,7 @@ h2 {
 p {
     text-align: center;
     color: #FFFFFF;
+    margin-left: auto;
 }
 ul {
     text-align: center;
