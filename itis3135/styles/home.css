@@ -1,15 +1,18 @@
 body {
-    background-color: teal;
+    background-color: #76818E;
 }
 
 h1 {
     text-align: center;
+    color: #69FFF1;
 }
 h2 {
     text-align: center;
+    color: #134611
 }
 p {
     text-align: center;
+    color: #CCFF66;
 }
 ul {
     text-align: center;
