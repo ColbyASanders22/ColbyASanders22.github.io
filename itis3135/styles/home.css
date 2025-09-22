@@ -8,11 +8,11 @@ h1 {
 }
 h2 {
     text-align: center;
-    color: #134611
+    color: #F8E16C
 }
 p {
     text-align: center;
-    color: #CCFF66;
+    color: #FFFFFF;
 }
 ul {
     text-align: center;
@@ -20,4 +20,7 @@ ul {
     display: flex;
     gap: 10px;
     justify-content: center;
+}
+a {
+    color: #90F4D8;
 }
