@@ -36,7 +36,9 @@
 
 		a{
 			color: #4ADB43;
-			padding: 0;
+			padding: 5px 10px;
+			display: inline-block;
+			transition: background-color 0.2s ease;
 		}
 		a:hover {
 			background-color: #3F88C5;
@@ -53,6 +55,29 @@
 			justify-content: center;
 			display: flex;
 		}
+		.text-box {
+  			background-color: rgba(0, 0, 0, 0.3); 
+  			padding: 20px;
+  			border-radius: 8px; 
+  			display: inline-block;
+  			margin: 20px auto; 
+		}
+		.resume-btn {
+  			display: inline-block;
+  			padding: 10px 20px;
+  			background-color: #3F88C5;  
+  			color: #fff;
+  			text-decoration: none;
+  			border-radius: 6px;
+  			font-weight: bold;
+  			transition: background-color 0.2s ease;
+
+		}
+		.resume-btn:hover {
+  			background-color: #2f6ca3;
+			padding: 10px 20px;
+			display: inline-block; 
+		}
 	</style>
 <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
@@ -61,19 +86,26 @@
 	<nav>
     <ul>
 		<li><a href="index.html">Home</a></li>
-		<li><a href="itis3135/introduction.html">About Me</a></li>
+		<li><a href="aboutme.html">About Me</a></li>
 	</ul>
     </nav>
 	<header>
 		<h1>Personal Home Page</h1>
 	</header>
 	<main>
+		<div class="text-box">
 		<p>Hello! My name is Colby Sanders and I am a Junior majoring 
 			in Computer Science with a concentration in cybersecurity.</p>
+			<p>I am currently working towards a CompTIA Network+ certification.</p>
+			</div>
+
+			<div class="resume" style="text-align: center;">
+			<a href="/docs/Colby-Sanders-Resume.docx" download class="resume-btn">Download Resume</a>
+			</div>
 	</main>
 	<footer>
 		<ul class="footer-links">
-			<li><a href="https://github.com/ColbyASanders22/ColbyASanders22.github.io">Github</a></li>
+			<li><a href="https://github.com/ColbyASanders22/ColbyASanders22.github.io">GitHub</a></li>
 			<li><a href="https://colbyasanders22.github.io/">GitHub.io</a></li>
 			<li><a href="www.linkedin.com/in/colby-sandersLinkedIn">LinkedIn</a></li>
 			<li><a href="itis3135/index.html">ITIS 3135</a></li>
