@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About Us</title>
     <style>
+        .logoheading {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logoinline {
+            width: 50px;
+            height: auto;
+        }
         .nav-list {
             list-style: none;
             padding: 0;
@@ -13,33 +22,57 @@
             justify-content: center;
             gap: 1rem;
         }
-        .nav-list a {
-            text-decoration: none;
-        }
-                body {
-            background-color: #3CBBB1;
+
+        body {
+            background-color: #167946;
         }
         h2 {
             color: #F07167;
+            display: flex;
+            justify-content: center;
         }
         h3 {
-            color: #36413E;
+            color: #C3BEF7;
         }
         p {
+            
             color: #F8F8F8;
         }
-        .logoheading {
+        .products-section {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            align-items: flex-start;
+            gap: 1.5rem;
         }
-        .logoinline {
-            width: 50px;
+
+        .services-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .info-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .section .content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .section-img {
+            width: 180px;
             height: auto;
+            object-fit: contain;
+        }
+        ul {
+            color: #F8F8F8;
         }
         footer {
-             text-align: center;
+            text-align: center;
+        }
+        a {
+            color: #FFD166;
         }
     </style>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -73,6 +106,7 @@
         <footer>
             <img src="images/cleversalmonhome.png" alt="Clever Salmon Logo" class="logoinline">
             <p class="footer-tag">Swim upstream to a better PC</p>
+            <p>Designed by<a href="CSandEnterprises/index.html">CSandEnterprises</a></p>
         </footer>
 </body>
 </html>
