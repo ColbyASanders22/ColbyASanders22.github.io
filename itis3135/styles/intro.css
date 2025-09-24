@@ -34,3 +34,10 @@ a {
     max-width: 800px;
     width: fit-content;
 }
+.profile-pic {
+  display: block;          
+  max-width: 250px;        
+  height: auto;            
+  margin: 20px auto;       
+  border-radius: 10px;     
+}
