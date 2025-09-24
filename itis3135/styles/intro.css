@@ -21,3 +21,16 @@ ul {
     gap: 10px;
     justify-content: center;
 }
+a {
+    color: #D8DDEF;
+}
+.text-box {
+  	background-color: rgba(0, 0, 0, 0.3); 
+  	padding: 20px;
+  	border-radius: 8px; 
+  	display: block;
+  	margin: 20px auto; 
+    text-align: left;
+    max-width: 800px;
+    width: fit-content;
+}

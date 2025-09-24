@@ -15,7 +15,8 @@ body {
 		}
 
 		p {
-			text-align: center;
+			color: #E8EBF7;
+			font-family: cursive;
 		}
 
 		ul {
@@ -51,8 +52,11 @@ body {
   			background-color: rgba(0, 0, 0, 0.3); 
   			padding: 20px;
   			border-radius: 8px; 
-  			display: inline-block;
+  			display: block;
   			margin: 20px auto; 
+    		text-align: left;
+    		max-width: 800px;
+    		width: fit-content;
 		}
 		.resume-btn {
   			display: inline-block;
@@ -69,4 +73,7 @@ body {
   			background-color: #2f6ca3;
 			padding: 10px 20px;
 			display: inline-block; 
+		}
+		.steve {
+			text-align: center;
 		}

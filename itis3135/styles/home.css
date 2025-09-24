@@ -23,5 +23,15 @@ ul {
     justify-content: center;
 }
 a {
-    color: #90F4D8;
+    color: #D8DDEF;
+}
+.text-box {
+    background-color: rgba(0, 0, 0, 0.3); 
+    padding: 10px;
+    border-radius: 8px; 
+    display: block;
+    width: fit-content;
+    text-align: left;
+    margin: 20px auto; 
+    
 }
