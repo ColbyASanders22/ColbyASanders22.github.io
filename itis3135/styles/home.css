@@ -51,17 +51,19 @@ footer {
     background: blue;
     margin: 50px auto;
 }
+/* Rule Overrides For Mobile Devices */
 @media screen and (min-width: 370px) and (max-width: 600px) {
     #colorbox {
         background-color:red;
     }
 }
-
+/* Rule Overrides For Tablet Devices */
 @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
     #colorbox {
         background-color:orange;
     }
 }
+/* Rule Overrides For Laptops / Small Screens */
 @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
     #colorbox {
         background-color:yellow;
