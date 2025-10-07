@@ -23,14 +23,15 @@ body {
     		text-align: center;
     		list-style-type: none;
     		display: flex;
+			margin: 0;
+			padding: 0;
     		gap: 10px;
     		justify-content: center;
 		}
 
 		a{
 			color: #4ADB43;
-			padding: 5px 10px;
-			display: inline-block;
+			display: block;
 			transition: background-color 0.2s ease;
 		}
 		a:hover {
