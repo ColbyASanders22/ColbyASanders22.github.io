@@ -1,0 +1,75 @@
+body {
+    background-color: #2E3338;
+    font-family: 'Poppins', sans-serif; 
+}
+    main {
+        width: 90%;
+        max-width: 1200px;
+        margin:0 auto;
+    }
+h1 {
+    text-align: center;
+    color: #69FFF1;
+}
+h2 {
+    text-align: center;
+    color: #F8E16C
+}
+p {
+    color: #FFFFFF;
+    margin-left: 10px;
+    padding: 10px;
+}
+table {
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+ul {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+a {
+    color: #D8DDEF;
+}
+.text-box {
+  	background-color: rgba(0, 0, 0, 0.3); 
+  	padding: 20px;
+  	border-radius: 8px; 
+  	display: block;
+  	margin: 20px auto; 
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+    width: fit-content;
+}
+footer {
+    text-align: center;
+}
+
+#colorbox {
+    height:200px;
+    width: 200px;
+    background: blue;
+    margin: 50px auto;
+}
+/* Rule Overrides For Mobile Devices */
+@media screen and (min-width: 370px) and (max-width: 600px) {
+    #colorbox {
+        background-color:red;
+    }
+}
+/* Rule Overrides For Tablet Devices */
+@media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+    #colorbox {
+        background-color:orange;
+    }
+}
+/* Rule Overrides For Laptops / Small Screens */
+@media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+    #colorbox {
+        background-color:yellow;
+    }
+}
