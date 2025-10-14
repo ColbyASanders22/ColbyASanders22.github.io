@@ -21,7 +21,6 @@ p {
     padding: 10px;
 }
 ul {
-    text-align: center;
     list-style-type: none;
     display: flex;
     gap: 10px;
