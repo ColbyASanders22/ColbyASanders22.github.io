@@ -55,7 +55,36 @@
         }
         footer {
           text-align: center;
-          padding: 20px;
+          padding: 200px;
+        }
+        .whatimg {
+          float: right;
+        }
+        .whyimg {
+          float:right;
+        }
+        .whoimg {
+          float:right;
+        }
+        .whenimg {
+          float: right;
+        }
+        .whereimg {
+          float:right;
+        }
+        .howimg {
+          float:right;
+        }
+        .ai-img {
+          float:right;
+          padding: 25px;
+        }
+        figcaption {
+          color: #F2F2F2;
+          text-align: center;
+        }
+        summary {
+          color:#F2F2F2;
         }
     </style>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -71,7 +100,7 @@
         <li><a href="#" data-section="locations">Locations</a></li>
         <li><a href="#" data-section="how">How</a></li>
         <li><a href="#" data-section="why">Why Choose Us</a></li>
-        <li><a href="ai-prompt">AI Prompt</a></li>
+        <li><a href="#" data-section="ai-prompt">AI Prompts</a></li>
     </ul>
     </nav>
 </header>
@@ -81,12 +110,41 @@
             <h1>Colby's Computers</h1>
     <h2 style ="text-align: center;">One Stop Shop For All Things Tech</h2>
     <h2>Welcome To Colby's Computers!</h2>
+             <figure class="whatimg">
+          <img src="images/whatimg.png" alt="what home image computer illustration" width="400">
+          <figcaption>Modern Computer Design Setup</figcaption>
+         </figure>
     <p>Whether you're building your first PC, upgrading your setup, or just love talking tech,
          this is the place to be. Colby’s Computers is all about making technology approachable, fun, and powerful for everyone.</p>
          <p>From gaming rigs and productivity builds to simple laptop advice, we’ve got something for every tech enthusiast.</p>
+         <h3>Tools We Use</h3>
+<ul>
+  <li>Hardware health: HWMonitor / CrystalDiskInfo</li>
+  <li>Parts planning: PC part picker spreadsheet</li>
+  <li>Remote help: Discord or Zoom screen share</li>
+  <li>Build toolkit: precision screwdrivers, zip ties, thermal paste</li>
+</ul>
+
+<h3>Pre-Session Prep</h3>
+<ul>
+  <li>List your symptoms or goals (e.g., “stutters in games,” “need more storage”).</li>
+  <li>Have recent error messages handy (screenshots help!).</li>
+  <li>If upgrading, confirm case size and power supply wattage.</li>
+</ul>
+         <h3>Quick Start Checklist</h3>
+<details>
+  <summary>Open checklist</summary>
+  <ul>
+    <li>Back up important files (just in case).</li>
+    <li>Decide your goal: build, fix, or upgrade.</li>
+    <li>Gather specs (model/CPU/RAM/GPU or a photo of your system label).</li>
+    <li>Set a budget and timeline.</li>
+    <li>Optional: snap a photo of your current setup for advice.</li>
+  </ul>
+</details>
 
          <footer>
-                  <p>Designed by © 2025  
+                  <p>Designed by © 2025
   <a href="../CSandEnterprises/index.html">CSandEnterprises</a></p>
 
 
@@ -103,17 +161,39 @@
     <!-- Why Section -->
     <section id="why">
         <h2>Why Choose Colby’s Computers?</h2>
-    <p>We believe computers shouldn’t be intimidating—they should be empowering. That’s why everything here is written in plain language, with helpful examples and visuals to make things clear and easy to follow.</p>
+          <figure class="whyimg">
+    <img src="images/whyimg.png" alt="why png/help support" width="300">
+    <figcaption>Here for all your tech support needs!</figcaption>
+  </figure>
+    <p>We believe computers shouldn’t be intimidating—they should be empowering. That’s why everything
+       here is written in plain language, with helpful examples and visuals to make things clear and easy to follow.</p>
     <ul>
       <li>🖥️ Easy-to-follow build guides</li>
       <li>⚡ Tips to boost performance</li>
       <li>🔧 Maintenance and upgrade advice</li>
     </ul>
+      <h3>What Makes Us Different</h3>
+  <p>Unlike most generic tech sites, Colby’s Computers is focused on making technology feel personal.
+     Whether you’re a first-time builder or upgrading your rig for the tenth time, you’ll always get straightforward advice without the fluff.</p>
+
+  <ul>
+    <li>✅ Friendly, beginner-first explanations</li>
+    <li>🧠 Real troubleshooting experience, not just theory</li>
+    <li>🤝 One-on-one support through guides and tips</li>
+  </ul>
+
+  <h3>What You Can Expect</h3>
+  <p>When you explore our site, you’ll find more than just tutorials—you’ll get a support system.
+     We want you to feel confident, not confused.</p>
     </section>
 
     <!-- Who Section -->
     <section id="about">
   <h2>About Colby’s Computers</h2>
+    <figure class="whoimg">
+    <img src="images/whoimg.png" alt="image for the who sections - meet the team" width="300px">
+    <figcaption>Meet the Team!</figcaption>
+  </figure>
   <p>Colby’s Computers started as a simple hobby — building, fixing, and upgrading computers for fun. Over time, that
      hobby grew into a passion for helping others understand their technology without all the confusing jargon.
       This site is a space to share that passion with anyone who wants to learn, build, or just talk tech.</p>
@@ -136,6 +216,10 @@
     <!-- When Section -->
     <section id="schedule">
   <h2>Schedule a Session</h2>
+  <figure class="whenimg">
+    <img src="images/whenimg.png" alt="calendar image - when page" width="300px">
+    <figcaption>Check here for our availability!</figcaption>
+  </figure>
   <p>Whether you need help building your first PC, want advice on upgrades, or just want to learn more about tech, Colby’s Computers offers flexible meeting times to fit your schedule. Choose the option that works best for you!</p>
 
   <h3 class="table1">🗓️ Weekly Availability</h3>
@@ -170,8 +254,9 @@
       </tr>
     </tbody>
   </table>
-    <h2>How It Works</h2>
-  <p>Booking a session with Colby’s Computers is quick and easy. Just choose a day and time that works best for you, and we’ll guide you through the rest.</p>
+    <h3>How It Works</h3>
+  <p>Booking a session with Colby’s Computers is quick and easy. Just choose a day and time that works best for you,
+     and we’ll guide you through the rest.</p>
 
   <ul>
     <li>🧾 <strong>Step 1:</strong> Pick your preferred session type.</li>
@@ -185,6 +270,10 @@
   <!-- Where Section -->
   <section id="locations">
   <h2>📍 Locations & Meet-Ups</h2>
+  <figure class="whereimg">
+    <img src="images/whereimg.png" alt="location image" width="300px">
+    <figcaption>Visit a location near you!</figcaption>
+  </figure>
   <p>Colby’s Computers offers flexible meeting spots so you can get hands-on help where it’s most convenient for you. Whether you want to meet in person or work together online, there’s an option that fits your schedule and comfort level.</p>
 
   <table>
@@ -213,23 +302,36 @@
       </tr>
     </tbody>
   </table>
-
-  <h2>How It Works</h2>
-  <p>Pick the location that works best for you, then book a time slot in advance so I can have the right tools and setup ready. For virtual sessions, a link will be sent to your email once your session is confirmed.</p>
-
+  <h3>Why These Locations?</h3>
+  <p>We chose these meet-up spots to make sure everyone has easy access to expert help.
+     Whether you’re a student, a professional, or just a tech enthusiast, you’ll find a comfortable
+      and convenient way to connect:</p>
   <ul>
-    <li>📌 Bring your device if meeting in person.</li>
-    <li>🧾 Make sure you have any parts or accessories you’d like help with.</li>
-    <li>⚡ Virtual sessions require a stable internet connection.</li>
+    <li>📚 <strong>University Library</strong> — quiet, reliable Wi-Fi, and easy to collaborate in person.</li>
+    <li>💻 <strong>Virtual Sessions</strong> — ideal if you prefer help from the comfort of your own home.</li>
+    <li>☕ <strong>Local Café</strong> — casual, social setting to share tips and build projects together.</li>
   </ul>
 
-  <p>Whether it’s on campus, at a local spot, or online, Colby’s Computers makes it easy to get help wherever you are.</p>
+  <h3>What to Expect at Meet-Ups</h3>
+  <ul>
+    <li>🧑‍🏫 A short orientation and topic of the day.</li>
+    <li>💬 Open Q&A and troubleshooting time.</li>
+    <li>🤝 Networking with other tech enthusiasts.</li>
+    <li>🪄 One-on-one mini-sessions for trickier problems.</li>
+  </ul>
+
+  <p>If you’re joining in person, be sure to bring your laptop and any parts or questions you want help with.
+     Virtual attendees will receive the link after signing up.</p>
 </section>
 
 
 <!-- How Section -->
 <section id="how">
   <h2>How It Works</h2>
+  <figure class="howimg">
+    <img src="images/howimg.png" alt="how help image" width="300">
+    <figcaption>Clear step-by-step tech support!</figcaption>
+  </figure>
   <p>Getting help from Colby’s Computers is simple and hassle-free. Whether you're trying to fix a problem, build something new, or just learn more about tech, here’s how the process works from start to finish.</p>
     
       <h3>1. Reach Out</h3>
@@ -246,6 +348,40 @@
 
 <!-- ai-prompt Section -->
 <section id="ai-prompt">
+<h2>AI Prompts:</h2>
+<figure class="ai-img">
+  <img src="images/aiimg.png" alt="ai image" width="300px">
+  <figcaption>AI-Generate Prompts</figcaption>
+</figure>
+  <p>These are the prompts I  used to generate code, text, and images for this single-page site.</p>
+
+  <h3>JavaScript (Single-Page Navigation)</h3>
+  <p><strong>Prompt:</strong> “Generate vanilla JavaScript that turns a multi-section HTML page into a single-page app. Requirements: 
+  1) Each nav link has a <code>data-section</code> that matches a <code>&lt;section id&gt;</code>. 
+  2) On load, only the default section (Home/What) is visible; others are hidden. 
+  3) Clicking a nav link hides all sections and shows the matching one; also toggle an <code>.active</code> class on the clicked link. 
+  4) Update the URL hash (no reload) and respect it on refresh. 
+  5) No libraries; accessible (use <code>aria-current="page"</code> on the active link). Code should pass HTML/JS validators.”</p>
+
+  <h3>Page Content (Short, Friendly, Accessible)</h3>
+  <p><strong>Prompt:</strong> “Write concise, friendly copy for a hobby site called ‘Colby’s Computers.’ Tone: approachable, beginner-friendly, no jargon. Sections: Home (What), About (Who), Schedule (When), Locations (Where), How It Works (How), Why Choose Us (Why). Each section gets a short intro paragraph plus 3–5 bullet points or a small table where appropriate. Use clear headings, short sentences, and avoid filler. Content should work on a dark theme and be easy to scan.”</p>
+
+  <h3>Image Prompts (PNG, Transparent Background)</h3>
+  <p>Style guidelines for all images: flat/minimal vector, modern tech aesthetic, dark theme with neon blue (<code>#4FC3F7</code>) and neon green (<code>#A8E10C</code>) accents, no text, transparent background, centered subject, clean edges, export as PNG. Keep visual style consistent across sections.</p>
+
+  <ul>
+    <li><strong>What (Home):</strong> “Create a minimalist desktop computer setup with a softly glowing monitor, compact keyboard, and mouse on a dark desk. Use neon blue/green accents and subtle reflections. No text or brand marks. PNG, transparent background.”</li>
+
+    <li><strong>Who (About):</strong> “Illustrate two or three friendly people around a computer desk, smiling and collaborating. Add subtle tech icons (gear, code brackets) floating in the background. Dark theme with neon blue/green accents. No text. PNG, transparent background.”</li>
+
+    <li><strong>When (Schedule):</strong> “Show a sleek calendar tile and analog clock overlapping, with faint circuit lines behind them to suggest ‘tech scheduling.’ Neon blue/green glow on a dark theme. No text. PNG, transparent background.”</li>
+
+    <li><strong>Where (Locations):</strong> “Draw a simple map shape with a few glowing location pins and a small computer icon. Include gentle circuit traces to imply ‘tech meetups.’ Dark theme, neon blue/green accents. No text. PNG, transparent background.”</li>
+
+    <li><strong>How (Process):</strong> “A robotic hand/arm interacting with floating UI panels: a wrench/tool icon, checklist with checkmarks, and a gear. Thin connecting lines/arrows to imply steps. Dark theme, neon blue/green accents. No text. PNG, transparent background.”</li>
+
+    <li><strong>Why (Why Choose Us):</strong> “A friendly technician guiding a customer at a modern desktop setup with a subtle glow. Add small icons like a shield/checkmark for trust and a gear for expertise. Dark theme, neon blue/green accents. No text. PNG, transparent background.”</li>
+  </ul>
 
 </section>
 </main>
