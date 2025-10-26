@@ -1,16 +1,32 @@
 body {
     background-color: #F5F5F5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+main {
     max-width: 800px;
+    margin:0 auto;
+    padding: 1rem;
+}
+h1 {
+    text-align: center;
 }
 h1, h2, h3 {
-    color: #1E3A8A;
+    color: #000080;
 }
+
 a {
     color: #F97316;
 }
 label {
     color: #1F2937;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 fieldset {
     border-color: #D1D5DB;
+}
+.hidden { 
+    display: none; 
+}
+footer {
+    text-align: center;
 }

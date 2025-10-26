@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BYO Introduction Page</title>
     <link rel="stylesheet" href="styles/form.css">
+
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<main>
+    <header>
+    <h1>Build Your Own Webpage</h1>
+    </header>
+    <p>Please enter your information below and we will generate a simple webpage for you!</p>
     <h3>Please Submit the Form Below</h3>
 
-    <form id="intro-form">
+    <form id="form">
         <!--Names-->
         <fieldset>
         <label>First Name* <input type="text" id="firstName" required value="Colby"></label>
@@ -86,8 +93,8 @@
     <fieldset>
       <legend>Quote</legend>
       <label>Quote* <input id="quote" required
-        placeholder='"Simplicity is the soul of efficiency."' value="Simplicity is the soul of efficiency." /></label>
-      <label>Quote Author* <input id="quoteAuthor" required placeholder="Austin Freeman" value="Austin Freeman" /></label>
+        placeholder='"The only way to do great work is to love what you do"' value="The only way to do great work is to love what you do" /></label>
+      <label>Quote Author* <input id="quoteAuthor" required placeholder="Steve Jobs" value="Steve Jobs" /></label>
     </fieldset>
 
     <!-- Extras -->
@@ -113,8 +120,12 @@
 
     </form>
 
-      <a href="#" id="restartLink" class="hidden">Start over</a>
+
+    <footer>
+        <p>Designed by © 2025 <a href="CSandEnterprises/index.html">CSandEnterprises</a></p>
+    </footer>
 
     <script src="scripts/introduction.js" defer></script>
+</main>
 </body>
 </html>
