@@ -1,0 +1,16 @@
+body {
+    background-color: #F5F5F5;
+    max-width: 800px;
+}
+h1, h2, h3 {
+    color: #1E3A8A;
+}
+a {
+    color: #F97316;
+}
+label {
+    color: #1F2937;
+}
+fieldset {
+    border-color: #D1D5DB;
+}

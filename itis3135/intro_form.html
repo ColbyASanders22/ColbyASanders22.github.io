@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYO Introduction Page</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <h3>Please Submit the Form Below</h3>
+
+    <form id="intro-form">
+        <!--Names-->
+        <fieldset>
+        <label>First Name* <input type="text" id="firstName" required value="Colby"></label>
+        <label>Middle Name <input type="text" id="middleName" value="Allen"></label>
+        <label>Last Name* <input type="text" id="lastName" required value="Sanders"></label>
+        <label>Nickname <input type="text" id="nickname" value="Slick"></label>
+        </fieldset>
+        
+        <!--Acknowledgement-->
+            <fieldset>
+      <legend>Acknowledgement</legend>
+      <label>Acknowledgement Statement* 
+        <input id="acknowledgement" required
+          placeholder="I acknowledge that this page is my work..."
+          value="I acknowledge that this Introduction page is my work and accurate to the best of my knowledge." />
+      </label>
+      <label>Acknowledgement Date* 
+        <input id="ackDate" type="date" required />
+      </label>
+    </fieldset>
+
+    <!-- Mascot / Divider -->
+    <fieldset>
+      <legend>Mascot & Divider</legend>
+      <label>Mascot Adjective* <input id="mascotAdj" required placeholder="Clever" value="Clever" /></label>
+      <label>Mascot Animal* <input id="mascotAnimal" required placeholder="Salmon" value="Salmon" /></label>
+      <label>Divider* <input id="divider" required maxlength="3" placeholder="~ or | or ♥" value="~" /></label>
+    </fieldset>
+
+    <!-- Picture -->
+    <fieldset>
+      <legend>Picture</legend>
+      <small>Defaults to your image URL; uploaded file (optional) will override on submit.</small>
+      <label>Picture URL* 
+        <input id="pictureUrl" type="url" required
+               placeholder="https://webpages.charlotte.edu/UNCCID/images/me.jpg"
+               value="https://webpages.charlotte.edu/csande53/images/me.jpg" />
+      </label>
+      <label>Upload Picture (optional)
+        <input id="pictureFile" type="file" accept="image/*" />
+      </label>
+      <label>Picture Caption* 
+        <input id="pictureCap" required placeholder="At UNC Charlotte"
+               value="UNC Charlotte — CS (Cybersecurity)" />
+      </label>
+    </fieldset>
+
+    <!-- Personal Statement + 7 bullets -->
+    <fieldset>
+      <legend>About You</legend>
+      <label>Personal Statement* 
+        <textarea id="personalStatement" required
+        >Computer Science major (Cybersecurity concentration) at UNC Charlotte; I love building PCs and solving tricky tech problems. Expected graduation: Dec 2026.</textarea>
+      </label>
+      <label>Seven Main Bullets* (one per line)</label>
+      <label>1 <input id="b1" required placeholder="Personal Background" value="Personal Background: Built my own PC; shift lead at Village Deli leading 5–6 teammates." /></label>
+      <label>2 <input id="b2" required placeholder="Academic Background" value="Academic Background: UNC Charlotte CS, Cybersecurity concentration." /></label>
+      <label>3 <input id="b3" required placeholder="Subject Interests" value="Interests: Systems, networking, web dev, security." /></label>
+      <label>4 <input id="b4" required placeholder="Hobbies" value="Hobbies: Gym, intramurals, building/selling computer parts." /></label>
+      <label>5 <input id="b5" required placeholder="Career Goals" value="Goals: Early Entry MS in Cybersecurity; internships in SecOps." /></label>
+      <label>6 <input id="b6" required placeholder="Strengths" value="Strengths: Problem-solving, teamwork, persistence (debugged 6-month PSU issue)." /></label>
+      <label>7 <input id="b7" required placeholder="Something Unique" value="Unique: 'Clever Salmon' brand across web projects." /></label>
+    </fieldset>
+
+    <!-- Courses (dynamic) -->
+    <fieldset>
+      <legend>Courses</legend>
+      <small>Each course needs Dept, Number, Name, Reason. Add/remove as needed.</small>
+      <ul id="courses" aria-live="polite"></ul>
+      <button type="button" id="addCourseBtn">+ Add Course</button>
+    </fieldset>
+
+    <!-- Quote -->
+    <fieldset>
+      <legend>Quote</legend>
+      <label>Quote* <input id="quote" required
+        placeholder='"Simplicity is the soul of efficiency."' value="Simplicity is the soul of efficiency." /></label>
+      <label>Quote Author* <input id="quoteAuthor" required placeholder="Austin Freeman" value="Austin Freeman" /></label>
+    </fieldset>
+
+    <!-- Extras -->
+    <fieldset>
+      <legend>Extras (optional)</legend>
+      <label>Funny thing (optional) <input id="funny" placeholder="A harmless, funny line..." /></label>
+      <label>Something I’d like to share (optional) <input id="share" placeholder="Share something cool..." /></label>
+    </fieldset>
+
+    <!-- Links -->
+    <fieldset>
+      <legend>Links (5)</legend>
+      <label>Link 1* <input id="link1" type="url" required placeholder="LinkedIn URL" value="https://www.linkedin.com/in/colby-sanders" /></label>
+      <label>Link 2* <input id="link2" type="url" required placeholder="GitHub URL" value="https://github.com/csande53" /></label>
+      <label>Link 3* <input id="link3" type="url" required placeholder="Portfolio / CLT page" value="https://webpages.charlotte.edu/csande53/" /></label>
+      <label>Link 4* <input id="link4" type="url" required placeholder="Resume URL" value="https://webpages.charlotte.edu/csande53/resume.pdf" /></label>
+      <label>Link 5* <input id="link5" type="url" required placeholder="Other link" value="mailto:csande53@uncc.edu" /></label>
+    </fieldset>
+
+    <button type="submit" id="submitBtn">Submit</button>
+    <button type="reset" id="resetBtn">Reset</button>
+    <button type="button" id="clearBtn">Clear</button>
+
+    </form>
+
+      <a href="#" id="restartLink" class="hidden">Start over</a>
+
+    <script src="scripts/introduction.js" defer></script>
+</body>
+</html>
