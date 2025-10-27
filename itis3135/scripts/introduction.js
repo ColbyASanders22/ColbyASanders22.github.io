@@ -49,7 +49,7 @@ if (formElement) {
       return;
     }
 
-    const get = (id) => document.getElementById(id)?.value || "";
+    const get = (id) => (document.getElementById(id) ? document.getElementById(id).value : "");
 
     const mascotAdj        = get("mascotAdj");
     const mascotAnimal     = get("mascotAnimal");
@@ -68,7 +68,10 @@ if (formElement) {
 
     const courseItems = coursesList
       ? Array.from(coursesList.querySelectorAll("li")).map((li) => {
-          const q = (sel) => li.querySelector(sel)?.value || "";
+          const q = (sel) => {
+        const el = li.querySelector(sel);
+        return el ? el.value : "";
+        };
           return `${q('input[name="course_dept"]')} ${q('input[name="course_num"]')} — ${q('input[name="course_name"]')} :: ${q('input[name="course_reason"]')}`;
         })
       : [];

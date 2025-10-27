@@ -54,17 +54,20 @@ footer {
 @media screen and (min-width: 370px) and (max-width: 600px) {
     #colorbox {
         background-color:red;
+        width: 120px;
     }
 }
 /* Rule Overrides For Tablet Devices */
 @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
     #colorbox {
         background-color:orange;
+        width: 250px;
     }
 }
 /* Rule Overrides For Laptops / Small Screens */
 @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
     #colorbox {
         background-color:yellow;
+        width: 500px;
     }
 }
