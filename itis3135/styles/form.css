@@ -71,13 +71,6 @@ blockquote {
     color: #FFFFFF;
     text-align: center;
 }
-img {
-    display: block;          
-    max-width: 250px;        
-    height: auto;            
-    margin: 20px auto;       
-    border-radius: 10px;  
-}
 figcaption {
     text-align: center;
     color: #FFFFFF;
@@ -92,5 +85,12 @@ figcaption {
 }
 li {
    margin-bottom: 10px;
+}
+.profile-pic {
+  display: block;          
+  max-width: 250px;        
+  height: auto;            
+  margin: 20px auto;       
+  border-radius: 10px;     
 }
 

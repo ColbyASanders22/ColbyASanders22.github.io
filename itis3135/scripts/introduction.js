@@ -172,7 +172,7 @@ document.body.innerHTML = `
   
 
     <figure>
-      <img src="${finalImgSrc}" alt="${firstName} ${lastName}" style="display: block; max-width: 250px; height: auto; margin: 20px auto; border-radius: 10px;">
+      <img class="profile-pic" src="${finalImgSrc}" alt="${firstName} ${lastName}" style="display: block; max-width: 250px; height: auto; margin: 20px auto; border-radius: 10px;">
       <figcaption>${pictureCap}</figcaption>
     </figure>
 

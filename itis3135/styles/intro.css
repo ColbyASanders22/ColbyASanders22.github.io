@@ -18,7 +18,7 @@ p {
 }
 ol {
     margin-left: 30px;
-    margin-top: 10px;
+    
 }
 .classes {
     color: #FFFFFF;
@@ -70,4 +70,5 @@ li {
 }
 blockquote {
     color: #FFFFFF;
+    margin-top: 50px;
 }
