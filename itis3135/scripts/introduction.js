@@ -162,6 +162,7 @@ const footerHTML = document.querySelector('footer')?.outerHTML
 document.body.innerHTML = `
   ${headerHTML}
   <main>
+    <h1>About Me</h1>
     <h2>${mascotAdj} ${mascotAnimal} ${divider.repeat(2)} ${[firstName, middleName, lastName].filter(Boolean).join(" ")}</h2>
   
 
