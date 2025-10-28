@@ -1,19 +1,16 @@
 body {
     background-color: #2E3338;
     font-family: 'Poppins', sans-serif;
+    width: 800px;
+    margin: 0 auto;
 }
-    main {
-        width: 90%;
-        max-width: 1200px;
-        margin:0 auto;
-    }
-
 h1 {
     text-align: center;
     color: #69FFF1;
 }
 h2 {
-    color: #F8E16C
+    color: #F8E16C;
+    text-align: center;
 }
 p {
     color: #FFFFFF;
@@ -62,13 +59,6 @@ fieldset {
 footer {
     text-align: center;
 }
-.profile-pic {
-  display: block;          
-  max-width: 250px;        
-  height: auto;            
-  margin: 20px auto;       
-  border-radius: 10px;     
-}
 ol {
     margin-left: 30px;
     color: #FFFFFF;
@@ -80,3 +70,19 @@ blockquote {
     color: #FFFFFF;
     text-align: center;
 }
+img {
+    display: block;          
+    max-width: 250px;        
+    height: auto;            
+    margin: 20px auto;       
+    border-radius: 10px;  
+}
+figcaption {
+    text-align: center;
+    color: #FFFFFF;
+}
+.classes {
+    color: #FFFFFF;
+    padding: 5px;
+}
+

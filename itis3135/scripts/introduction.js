@@ -153,27 +153,35 @@ if (formElement) {
     if (picFile) finalImgSrc = URL.createObjectURL(picFile);
 
     // Replace EVERYTHING on the page with the generated intro
+    
+const headerHTML = document.querySelector('header')?.outerHTML
+  || '<div data-include="components/header.html"></div>';
+const footerHTML = document.querySelector('footer')?.outerHTML
+  || '<div data-include="components/footer.html"></div>';
+
 document.body.innerHTML = `
+  ${headerHTML}
   <main style="max-width:800px;margin:0 auto;padding:1rem;box-sizing:border-box;">
-    <h2>${mascotAdj} ${mascotAnimal}</h2>
+    <h2>${mascotAdj} ${mascotAnimal} ${divider.repeat(2)} ${[firstName, middleName, lastName].filter(Boolean).join(" ")}</h2>
+  
 
     <figure>
-      <img src="${finalImgSrc}" alt="${firstName} ${lastName}" style="max-width:220px;">
+      <img src="${finalImgSrc}" alt="${firstName} ${lastName}" style="display: block; max-width: 250px; height: auto; margin: 20px auto; border-radius: 10px;">
       <figcaption>${pictureCap}</figcaption>
     </figure>
 
-    <h3>${[firstName, middleName, lastName].filter(Boolean).join(" ")}</h3>
+  
     <p>${personalStatement}</p>
 
 ${
   bullets.length
     ? `<ul>
-        ${bullets[0] ? `<li><strong>Personal Background:</strong> ${bullets[0]}</li>` : ""}
-        ${bullets[1] ? `<li><strong>Professional Background:</strong> ${bullets[1]}</li>` : ""}
-        ${bullets[2] ? `<li><strong>Academic Background:</strong> ${bullets[2]}</li>` : ""}
+        ${bullets[0] ? `<li class="classes"><strong>Personal Background:</strong> ${bullets[0]}</li>` : ""}
+        ${bullets[1] ? `<li class="classes"><strong>Professional Background:</strong> ${bullets[1]}</li>` : ""}
+        ${bullets[2] ? `<li class="classes"><strong>Academic Background:</strong> ${bullets[2]}</li>` : ""}
         ${
           courseItems.length
-            ? `<li><strong>Courses I’m taking and why</strong>
+            ? `<li class="classes"><strong>Courses I’m taking and why</strong>
                  <ol class="courses-list" style="margin-top:0.5rem;">
                    ${courseItems.map(c => `<li>${c}</li>`).join("")}
                  </ol>
@@ -188,15 +196,19 @@ ${
 
 
     <hr>
-    <p>${divider.repeat(30)}</p>
+    
 
     <p style="margin-top:1rem;">
       <a href="#" onclick="location.reload()">Start over</a>
     </p>
   </main>
+
+  ${footerHTML}
 `;
   });
 }
+
+
 
 /* Reset: remove added course rows after browser reset */
 if (resetBtn && coursesList) {
