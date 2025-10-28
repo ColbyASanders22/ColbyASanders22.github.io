@@ -53,31 +53,31 @@ function addDefaultCourses() {
       dept: "ITSC",
       num: "3146",
       cname: "Intro Oper Syst & Networking",
-      reason: "I am interested in networking and how everything is interconnected."
+      reason: "I am taking this course because I am interested in networking and how everything is interconnected."
     },
     {
       dept: "ITSC",
       num: "2175",
       cname: "Logic and Algorithms",
-      reason: "I am curious how algorithms work as they can be extremely useful in real world applications."
+      reason: " I am taking this course because I am curious how algorithms work as they can be extremely useful in real world applications."
     },
     {
       dept: "ITIS",
       num: "3135",
       cname: "Front-End Web App Development",
-      reason: "I am interested in making web applications."
+      reason: " I am interested in this because I am interested in making web applications."
     },
     {
       dept: "ITSC",
       num: "3160",
       cname: "Database Design & Implementation",
-      reason: "Databases are another extremely useful tool in the real world and it is important to make sure that they are implemented properly."
+      reason: " I am taking this course because databases are another extremely useful tool in the real world and it is important to make sure that they are implemented properly."
     },
     {
       dept: "MATH",
       num: "2164",
       cname: "Matrices & Linear Algebra",
-      reason: "It is a part of the curriculum. I am not a big math fan, unfortunately."
+      reason: " I am taking this course because it is a part of the curriculum. I am not a big math fan, unfortunately."
     }
   ];
 
