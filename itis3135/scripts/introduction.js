@@ -198,7 +198,7 @@ ${
        </ul>`
     : ""
 }
-    <blockquote>“${quote}” — ${quoteAuthor}</blockquote>
+    <blockquote>“${quote}” - ${quoteAuthor}</blockquote>
 
 
     <hr>
