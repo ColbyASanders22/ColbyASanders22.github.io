@@ -15,8 +15,28 @@ h2 {
 p {
     color: #FFFFFF;
 }
-ul {
+ol {
+    margin-left: 30px;
+}
+.classes {
+    color: #FFFFFF;
+    padding: 5px;
+}
+.top-nav {
     text-align: center;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.bottom-nav {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.footer-links {
     list-style-type: none;
     display: flex;
     gap: 10px;
@@ -41,4 +61,10 @@ a {
   height: auto;            
   margin: 20px auto;       
   border-radius: 10px;     
+}
+.steve {
+    text-align: center;
+}
+footer {
+    text-align: center;
 }

@@ -41,6 +41,73 @@ if (addCourseBtn && coursesList) {
   });
 }
 
+function addDefaultCourses() {
+  if (!coursesList) return;
+
+  // If rows already exist, don't duplicate
+  const alreadyHasRows = coursesList.children.length > 0 && coursesList.querySelector("input");
+  if (alreadyHasRows) return;
+
+  const DEFAULT_COURSES = [
+    {
+      dept: "ITSC",
+      num: "3146",
+      cname: "Intro Oper Syst & Networking",
+      reason: "I am interested in networking and how everything is interconnected."
+    },
+    {
+      dept: "ITSC",
+      num: "2175",
+      cname: "Logic and Algorithms",
+      reason: "I am curious how algorithms work as they can be extremely useful in real world applications."
+    },
+    {
+      dept: "ITIS",
+      num: "3135",
+      cname: "Front-End Web App Development",
+      reason: "I am interested in making web applications."
+    },
+    {
+      dept: "ITSC",
+      num: "3160",
+      cname: "Database Design & Implementation",
+      reason: "Databases are another extremely useful tool in the real world and it is important to make sure that they are implemented properly."
+    },
+    {
+      dept: "MATH",
+      num: "2164",
+      cname: "Matrices & Linear Algebra",
+      reason: "It is a part of the curriculum. I am not a big math fan, unfortunately."
+    }
+  ];
+
+  DEFAULT_COURSES.forEach(prefill => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <label>Dept* <input required name="course_dept" placeholder="ITSC" value="${prefill.dept}"></label>
+      <label>Number* <input required name="course_num" type="number" placeholder="3160" value="${prefill.num}"></label>
+      <label>Name* <input required name="course_name" placeholder="Database Design" value="${prefill.cname}"></label>
+      <label>Reason* <input required name="course_reason" placeholder="Why you're taking it" value="${prefill.reason}"></label>
+      <button type="button" class="delete-course">Remove</button>
+    `;
+    li.querySelector(".delete-course").addEventListener("click", () => li.remove());
+    coursesList.appendChild(li);
+  });
+}
+
+// Run once on load
+addDefaultCourses();
+
+// Also repopulate after a Reset (reuses your existing reset handler)
+if (resetBtn && coursesList) {
+  resetBtn.addEventListener("click", function () {
+    setTimeout(() => {
+      coursesList.innerHTML = "";
+      addDefaultCourses();
+    }, 0);
+  });
+}
+
 /* Single source of truth: FORM SUBMIT — replace ENTIRE PAGE */
 if (formElement) {
   formElement.addEventListener("submit", function (e) {
@@ -98,12 +165,19 @@ document.body.innerHTML = `
     <h3>${[firstName, middleName, lastName].filter(Boolean).join(" ")}</h3>
     <p>${personalStatement}</p>
 
-    ${bullets.length
-      ? `<ul>${bullets.map(function(b){ return `<li>${b}</li>`; }).join("")}</ul>`
-      : ""}
+${
+  bullets.length
+    ? `<ul>
+        ${bullets[0] ? `<li><strong>Personal Background:</strong> ${bullets[0]}</li>` : ""}
+        ${bullets[1] ? `<li><strong>Professional Background:</strong> ${bullets[1]}</li>` : ""}
+        ${bullets[2] ? `<li><strong>Academic Background:</strong> ${bullets[2]}</li>` : ""}
+        ${bullets.slice(3).map(function(b){ return `<li>${b}</li>`; }).join("")}
+       </ul>`
+    : ""
+}
 
     ${courseItems.length
-      ? `<h4>Current Courses</h4><ul>${courseItems.map(function(c){ return `<li>${c}</li>`; }).join("")}</ul>`
+      ? `<h4>Current Courses</h4><ol>${courseItems.map(function(c){ return `<li>${c}</li>`; }).join("")}</ol>`
       : ""}
 
     <blockquote>“${quote}” — ${quoteAuthor}</blockquote>
@@ -131,4 +205,3 @@ if (resetBtn && coursesList) {
     setTimeout(() => { coursesList.innerHTML = ""; }, 0);
   });
 }
-

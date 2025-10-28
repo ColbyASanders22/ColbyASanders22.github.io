@@ -1,9 +1,12 @@
 body {
     background-color: #2E3338;
     font-family: 'Poppins', sans-serif;
-    width: 800px;
-    margin: 0 auto;
 }
+    main {
+        width: 90%;
+        max-width: 1200px;
+        margin:0 auto;
+    }
 
 h1 {
     text-align: center;
@@ -15,8 +18,19 @@ h2 {
 p {
     color: #FFFFFF;
 }
-ul {
-    text-align: center;
+.top-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.bottom-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.footer-links {
     list-style-type: none;
     display: flex;
     gap: 10px;
@@ -47,4 +61,18 @@ fieldset {
 
 footer {
     text-align: center;
+}
+.profile-pic {
+  display: block;          
+  max-width: 250px;        
+  height: auto;            
+  margin: 20px auto;       
+  border-radius: 10px;     
+}
+ol {
+    margin-left: 30px;
+    color: #FFFFFF;
+}
+ul {
+    color: #FFFFFF;
 }

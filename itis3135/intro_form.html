@@ -18,7 +18,7 @@
         <fieldset>
           <legend>Personal Information</legend>
         <label>First Name* <input type="text" id="firstName" required value="Colby"></label>
-        <label>Middle Name <input type="text" id="middleName" value="Allen"></label>
+        <label>Middle Name <input type="text" id="middleName" placeholder="Middle Name"></label>
         <label>Last Name* <input type="text" id="lastName" required value="Sanders"></label>
         <label>Nickname <input type="text" id="nickname" value="Slick"></label>
         </fieldset>
@@ -64,25 +64,20 @@
 
     <!-- Personal Statement + 7 bullets -->
     <fieldset>
-      <legend>About You</legend>
+      <legend>Background</legend>
       <label>Personal Statement* 
         <textarea id="personalStatement" required
         >Computer Science major (Cybersecurity concentration) at UNC Charlotte; I love building PCs and solving tricky tech problems. Expected graduation: Dec 2026.</textarea>
       </label>
       <label>Seven Main Bullets* (one per line)</label>
-      <label>1 <input id="b1" required placeholder="Personal Background" value="Personal Background: Built my own PC; shift lead at Village Deli leading 5–6 teammates." /></label>
-      <label>2 <input id="b2" required placeholder="Academic Background" value="Academic Background: UNC Charlotte CS, Cybersecurity concentration." /></label>
-      <label>3 <input id="b3" required placeholder="Subject Interests" value="Interests: Systems, networking, web dev, security." /></label>
-      <label>4 <input id="b4" required placeholder="Hobbies" value="Hobbies: Gym, intramurals, building/selling computer parts." /></label>
-      <label>5 <input id="b5" required placeholder="Career Goals" value="Goals: Early Entry MS in Cybersecurity; internships in SecOps." /></label>
-      <label>6 <input id="b6" required placeholder="Strengths" value="Strengths: Problem-solving, teamwork, persistence (debugged 6-month PSU issue)." /></label>
-      <label>7 <input id="b7" required placeholder="Something Unique" value="Unique: 'Clever Salmon' brand across web projects." /></label>
+      <label>1 <input id="b1" required placeholder="Personal Background" value="Hobbies I enjoy in my free time include going to the gym, walking my dog, playing video games, hanging out with friends, watching sports, watching moves/tv, and more!" /></label>
+      <label>2 <input id="b2" required placeholder="Professional Background" value="I began my career in 2021 by working at Charlotte Beer Garden and have had various different serving jobs since then. This past summer, I was fortunate enough to have the opportunity to do an Externship with Snapchat that consisted of us creating different AR lenses." /></label>
+      <label>3 <input id="b3" required placeholder="Academic Background" value="I am currently a junior and I transferred here from Wake Tech. I am pursuing a major in computer science with a concentration in cybersecurity." /></label>
     </fieldset>
 
     <!-- Courses (dynamic) -->
     <fieldset>
       <legend>Courses</legend>
-      <small>Each course needs Dept, Number, Name, Reason. Add/remove as needed.</small>
       <ul id="courses" aria-live="polite"></ul>
       <button type="button" id="addCourseBtn">+ Add Course</button>
     </fieldset>
@@ -100,16 +95,6 @@
       <legend>Extras (optional)</legend>
       <label>Funny thing (optional) <input id="funny" placeholder="A harmless, funny line..." /></label>
       <label>Something I’d like to share (optional) <input id="share" placeholder="Share something cool..." /></label>
-    </fieldset>
-
-    <!-- Links -->
-    <fieldset>
-      <legend>Links (5)</legend>
-      <label>CLT Web: <input id="link1" type="url" required placeholder="Clt Web" value="https://webpages.charlotte.edu/csande53/" /></label>
-      <label>Github: <input id="link2" type="url" required placeholder="GitHub URL" value="https://github.com/csande53" /></label>
-      <label>ITIS3135.io <input id="link3" type="url" required placeholder="Github Profile" value="https://colbyasanders22.github.io/" /></label>
-      <label>FreeCodeCamp <input id="link4" type="url" required placeholder="FreeCodeCamp Profile" value="https://webpages.charlotte.edu/csande53/resume.pdf" /></label>
-      <label>LinkedIn: <input id="link5" type="url" required placeholder="LinkedIn" value="https://www.linkedin.com/in/colby-sanders" /></label>
     </fieldset>
 
     <button type="submit" id="submitBtn">Submit</button>

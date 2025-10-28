@@ -23,13 +23,6 @@ p {
     gap: 10px;
     justify-content: center;
 }
-.footer-links {
-    text-align: center;
-    list-style-type: none;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
 .list {    
     list-style-type: none;
     gap: 10px;
@@ -49,6 +42,14 @@ a {
     max-width: 800px;
     width: fit-content;
 }
+.footer-links {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
 footer {
     text-align: center;
 }
