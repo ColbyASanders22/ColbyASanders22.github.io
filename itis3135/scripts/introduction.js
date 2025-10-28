@@ -81,7 +81,7 @@ function addDefaultCourses() {
     }
   ];
 
-  DEFAULT_COURSES.forEach(prefill => {
+  DEFAULT_COURSES.forEach((prefill) => {
     const li = document.createElement("li");
     li.innerHTML = `
       <label>Dept* <input required name="course_dept" placeholder="ITSC" value="${prefill.dept}"></label>
@@ -189,12 +189,12 @@ ${
           courseItems.length
             ? `<li class="classes"><strong>Courses I’m taking and why</strong>
                  <ol class="courses-list" style="padding: 5px;">
-                   ${courseItems.map(c => `<li>${c}</li>`).join("")}
+                   ${courseItems.map((c) => `<li>${c}</li>`).join("")}
                  </ol>
                </li>`
             : ""
         }
-        ${bullets.slice(3).map(b => `<li>${b}</li>`).join("")}
+        ${bullets.slice(3).map((b) => `<li>${b}</li>`).join("")}
        </ul>`
     : ""
 }
