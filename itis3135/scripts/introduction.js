@@ -154,10 +154,15 @@ if (formElement) {
 
     // Replace EVERYTHING on the page with the generated intro
     
-const headerHTML = document.querySelector('header')?.outerHTML
-  || '<div data-include="components/header.html"></div>';
-const footerHTML = document.querySelector('footer')?.outerHTML
-  || '<div data-include="components/footer.html"></div>';
+const headerElement = document.querySelector('header');
+const headerHTML = headerElement
+  ? headerElement.outerHTML
+  : '<div data-include="components/header.html"></div>';
+
+const footerElement = document.querySelector('footer');
+const footerHTML = footerElement
+  ? footerElement.outerHTML
+  : '<div data-include="components/footer.html"></div>';
 
 document.body.innerHTML = `
   ${headerHTML}
