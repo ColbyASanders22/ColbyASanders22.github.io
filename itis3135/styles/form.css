@@ -60,6 +60,8 @@ footer {
     text-align: center;
 }
 ol {
+    margin-top: 10px;
+    margin-left: 30px;
     color: #FFFFFF;
 }
 ul {
@@ -87,5 +89,8 @@ figcaption {
 #classes {
     color: #FFFFFF;
     padding: 5px;
+}
+li {
+   
 }
 
