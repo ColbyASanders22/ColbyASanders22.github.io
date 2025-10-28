@@ -219,6 +219,10 @@ ${
 /* Reset: remove added course rows after browser reset */
 if (resetBtn && coursesList) {
   resetBtn.addEventListener("click", function () {
-    setTimeout(() => { coursesList.innerHTML = ""; }, 0);
+    // wait for native <form> reset to finish
+    setTimeout(() => {
+      coursesList.innerHTML = "";
+      addDefaultCourses();
+    }, 0);
   });
 }
