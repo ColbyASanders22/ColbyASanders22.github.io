@@ -18,6 +18,7 @@ p {
 }
 ol {
     margin-left: 30px;
+    margin-top: 10px;
 }
 .classes {
     color: #FFFFFF;
@@ -66,4 +67,7 @@ footer {
 li {
     color: #FFFFFF;
     margin-bottom: 10px;
+}
+blockquote {
+    color: #FFFFFF;
 }
