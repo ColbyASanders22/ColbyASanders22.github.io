@@ -62,6 +62,10 @@ a {
   margin: 20px auto;       
   border-radius: 10px;     
 }
+figcaption {
+    text-align: center;
+    color: #FFFFFF;
+}
 .steve {
     text-align: center;
 }

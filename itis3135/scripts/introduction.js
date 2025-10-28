@@ -171,22 +171,21 @@ ${
         ${bullets[0] ? `<li><strong>Personal Background:</strong> ${bullets[0]}</li>` : ""}
         ${bullets[1] ? `<li><strong>Professional Background:</strong> ${bullets[1]}</li>` : ""}
         ${bullets[2] ? `<li><strong>Academic Background:</strong> ${bullets[2]}</li>` : ""}
-        ${bullets.slice(3).map(function(b){ return `<li>${b}</li>`; }).join("")}
+        ${
+          courseItems.length
+            ? `<li><strong>Courses I’m taking and why</strong>
+                 <ol class="courses-list" style="margin-top:0.5rem;">
+                   ${courseItems.map(c => `<li>${c}</li>`).join("")}
+                 </ol>
+               </li>`
+            : ""
+        }
+        ${bullets.slice(3).map(b => `<li>${b}</li>`).join("")}
        </ul>`
     : ""
 }
-
-    ${courseItems.length
-      ? `<h4>Current Courses</h4><ol>${courseItems.map(function(c){ return `<li>${c}</li>`; }).join("")}</ol>`
-      : ""}
-
     <blockquote>“${quote}” — ${quoteAuthor}</blockquote>
 
-    ${links.length
-      ? `<h4>Links</h4><ul>${links.map(function(u,i){
-            return `<li><a href="${u}" target="_blank" rel="noopener">Link ${i+1}</a></li>`;
-          }).join("")}</ul>`
-      : ""}
 
     <hr>
     <p>${divider.repeat(30)}</p>
