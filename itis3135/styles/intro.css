@@ -10,7 +10,8 @@ h1 {
     color: #69FFF1;
 }
 h2 {
-    color: #F8E16C
+    color: #F8E16C;
+    text-align: center;
 }
 p {
     color: #FFFFFF;
@@ -61,4 +62,7 @@ figcaption {
 }
 footer {
     text-align: center;
+}
+li {
+    color: #FFFFFF;
 }

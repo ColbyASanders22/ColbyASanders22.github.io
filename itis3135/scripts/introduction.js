@@ -141,7 +141,7 @@ if (formElement) {
         const el = li.querySelector(sel);
         return el ? el.value : "";
         };
-          return `${q('input[name="course_dept"]')} ${q('input[name="course_num"]')} — ${q('input[name="course_name"]')} :: ${q('input[name="course_reason"]')}`;
+          return `${q('input[name="course_dept"]')} ${q('input[name="course_num"]')} - ${q('input[name="course_name"]')}: ${q('input[name="course_reason"]')}`;
         })
       : [];
 
@@ -161,7 +161,7 @@ const footerHTML = document.querySelector('footer')?.outerHTML
 
 document.body.innerHTML = `
   ${headerHTML}
-  <main style="max-width:800px;margin:0 auto;padding:1rem;box-sizing:border-box;">
+  <main>
     <h2>${mascotAdj} ${mascotAnimal} ${divider.repeat(2)} ${[firstName, middleName, lastName].filter(Boolean).join(" ")}</h2>
   
 
@@ -182,7 +182,7 @@ ${
         ${
           courseItems.length
             ? `<li class="classes"><strong>Courses I’m taking and why</strong>
-                 <ol class="courses-list" style="margin-top:0.5rem;">
+                 <ol class="courses-list" style="padding: 5px;">
                    ${courseItems.map(c => `<li>${c}</li>`).join("")}
                  </ol>
                </li>`
