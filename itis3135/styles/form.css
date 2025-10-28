@@ -1,34 +1,46 @@
 body {
-    background-color: #F5F5F5;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-main {
-    max-width: 800px;
-    margin:0 auto;
-    padding: 1rem;
-}
-h1 {
-    text-align: center;
-    color: #000080;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-h2, h3 {
-    color: #000080;
+    background-color: #2E3338;
+    font-family: 'Poppins', sans-serif;
+    width: 800px;
+    margin: 0 auto;
 }
 
+h1 {
+    text-align: center;
+    color: #69FFF1;
+}
+h2 {
+    color: #F8E16C
+}
+p {
+    color: #FFFFFF;
+}
+ul {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 a {
-    color: #F97316;
+    color: #D8DDEF;
+}
+legend {
+    color: #00CED1;
+    font-weight: bold;
+    
 }
 label {
-    color: #1F2937;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFFFFF;
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 fieldset {
     border-color: #D1D5DB;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 .hidden { 
     display: none; 
-}
-footer {
-    text-align: center;
 }

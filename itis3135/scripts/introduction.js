@@ -1,15 +1,17 @@
 document
-  .querySelector("button[type='button']")
-  .addEventListener("click", function (event) {
+  .querySelector("#clearBtn")
+  .addEventListener("click", function () {
     Array.from(document.querySelectorAll("form input")).forEach((input) => {
-      input.value = "";
+      if (input.type === "file") input.value = null; else input.value = "";
     });
   });
 
-const clearButton = document.querySelector("button[type='button']");
+const clearButton = document.querySelector("#clearBtn");
 const inputElements = Array.from(document.querySelectorAll("form input"));
 clearButton.addEventListener("click", function () {
-  inputs.forEach((input) => (input.value = ""));
+  inputElements.forEach((input) => {
+    if (input.type === "file") input.value = null; else input.value = "";
+  });
 });
 
 /* Patch so the second snippet works as written (it references `inputs`) */
@@ -22,6 +24,14 @@ const formElement  = document.getElementById("form");
 const resetBtn     = document.getElementById("resetBtn");
 const addCourseBtn = document.getElementById("addCourseBtn");
 const coursesList  = document.getElementById("courses");
+
+const pictureFileInput = document.getElementById("pictureFile");
+const imagePreview = document.getElementById("imagePreview");
+
+pictureFileInput.addEventListener("change", () => {
+  const file = pictureFileInput.files[0];
+  imagePreview.src = file ? URL.createObjectURL(file) : "images/skitrip.jpg";
+});
 
 /* Add Course + Remove */
 if (addCourseBtn && coursesList) {
@@ -77,37 +87,48 @@ if (formElement) {
       : [];
 
     // Uploaded image overrides URL
-    const picFile = document.getElementById("pictureFile")?.files?.[0] || null;
+    const picInput = document.getElementById("pictureFile");
+    const picFile = picInput && picInput.files && picInput.files[0] ? picInput.files[0] : null;
     let finalImgSrc = pictureUrl;
     if (picFile) finalImgSrc = URL.createObjectURL(picFile);
 
     // Replace EVERYTHING on the page with the generated intro
-    document.body.innerHTML = `
-      <main style="max-width:800px;margin:0 auto;padding:1rem;box-sizing:border-box;">
-        <h2>${escapeHtml(mascotAdj)} ${escapeHtml(mascotAnimal)}</h2>
-        <figure>
-          <img src="${escapeAttr(finalImgSrc)}" alt="${escapeAttr(firstName)} ${escapeAttr(lastName)}" style="max-width:220px;">
-          <figcaption>${escapeHtml(pictureCap)}</figcaption>
-        </figure>
-        <h3>${escapeHtml([firstName, middleName, lastName].filter(Boolean).join(" "))}</h3>
-        <p>${escapeHtml(personalStatement)}</p>
+document.body.innerHTML = `
+  <main style="max-width:800px;margin:0 auto;padding:1rem;box-sizing:border-box;">
+    <h2>${mascotAdj} ${mascotAnimal}</h2>
 
-        ${bullets.length ? `<ul>${bullets.map(b=>`<li>${escapeHtml(b)}</li>`).join("")}</ul>` : ""}
+    <figure>
+      <img src="${finalImgSrc}" alt="${firstName} ${lastName}" style="max-width:220px;">
+      <figcaption>${pictureCap}</figcaption>
+    </figure>
 
-        ${courseItems.length ? `<h4>Current Courses</h4><ul>${courseItems.map(c=>`<li>${escapeHtml(c)}</li>`).join("")}</ul>` : ""}
+    <h3>${[firstName, middleName, lastName].filter(Boolean).join(" ")}</h3>
+    <p>${personalStatement}</p>
 
-        <blockquote>“${escapeHtml(quote)}” — ${escapeHtml(quoteAuthor)}</blockquote>
+    ${bullets.length
+      ? `<ul>${bullets.map(function(b){ return `<li>${b}</li>`; }).join("")}</ul>`
+      : ""}
 
-        ${links.length ? `<h4>Links</h4><ul>${links.map((u,i)=>`<li><a href="${escapeAttr(u)}" target="_blank" rel="noopener">Link ${i+1}</a></li>`).join("")}</ul>` : ""}
+    ${courseItems.length
+      ? `<h4>Current Courses</h4><ul>${courseItems.map(function(c){ return `<li>${c}</li>`; }).join("")}</ul>`
+      : ""}
 
-        <hr>
-        <p>${escapeHtml(divider).repeat(30)}</p>
+    <blockquote>“${quote}” — ${quoteAuthor}</blockquote>
 
-        <p style="margin-top:1rem;">
-          <a href="#" onclick="location.reload()">Start over</a>
-        </p>
-      </main>
-    `;
+    ${links.length
+      ? `<h4>Links</h4><ul>${links.map(function(u,i){
+            return `<li><a href="${u}" target="_blank" rel="noopener">Link ${i+1}</a></li>`;
+          }).join("")}</ul>`
+      : ""}
+
+    <hr>
+    <p>${divider.repeat(30)}</p>
+
+    <p style="margin-top:1rem;">
+      <a href="#" onclick="location.reload()">Start over</a>
+    </p>
+  </main>
+`;
   });
 }
 
@@ -118,6 +139,3 @@ if (resetBtn && coursesList) {
   });
 }
 
-/* Simple escaping helpers */
-function escapeHtml(s){return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));}
-function escapeAttr(s){return escapeHtml(s).replace(/"/g,'&quot;');}

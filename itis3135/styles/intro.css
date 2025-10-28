@@ -1,6 +1,8 @@
 body {
     background-color: #2E3338;
     font-family: 'Poppins', sans-serif;
+    width: 800px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -8,11 +10,9 @@ h1 {
     color: #69FFF1;
 }
 h2 {
-    text-align: center;
     color: #F8E16C
 }
 p {
-    text-align: center;
     color: #FFFFFF;
 }
 ul {

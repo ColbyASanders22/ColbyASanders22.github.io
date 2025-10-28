@@ -14,11 +14,12 @@
     <h1>Build Your Own Webpage</h1>
     </header>
     <p>Please enter your information below and we will generate a simple webpage for you!</p>
-    <h3>Please Submit the Form Below</h3>
+    <h2>Please Submit the Form Below</h2>
 
     <form id="form">
         <!--Names-->
         <fieldset>
+          <legend>Personal Information</legend>
         <label>First Name* <input type="text" id="firstName" required value="Colby"></label>
         <label>Middle Name <input type="text" id="middleName" value="Allen"></label>
         <label>Last Name* <input type="text" id="lastName" required value="Sanders"></label>
@@ -49,11 +50,10 @@
     <!-- Picture -->
     <fieldset>
       <legend>Picture</legend>
-      <small>Defaults to your image URL; uploaded file (optional) will override on submit.</small>
       <label>Picture URL* 
-        <input id="pictureUrl" type="url" required
-               placeholder="https://webpages.charlotte.edu/UNCCID/images/me.jpg"
-               value="https://webpages.charlotte.edu/csande53/images/me.jpg" />
+        <input id="pictureUrl" type="text" required
+               placeholder="images/skitrip.jpg"
+               value="images/skitrip.jpg" />
       </label>
       <label>Upload Picture (optional)
         <input id="pictureFile" type="file" accept="image/*" />
@@ -107,11 +107,11 @@
     <!-- Links -->
     <fieldset>
       <legend>Links (5)</legend>
-      <label>Link 1* <input id="link1" type="url" required placeholder="LinkedIn URL" value="https://www.linkedin.com/in/colby-sanders" /></label>
-      <label>Link 2* <input id="link2" type="url" required placeholder="GitHub URL" value="https://github.com/csande53" /></label>
-      <label>Link 3* <input id="link3" type="url" required placeholder="Portfolio / CLT page" value="https://webpages.charlotte.edu/csande53/" /></label>
-      <label>Link 4* <input id="link4" type="url" required placeholder="Resume URL" value="https://webpages.charlotte.edu/csande53/resume.pdf" /></label>
-      <label>Link 5* <input id="link5" type="url" required placeholder="Other link" value="mailto:csande53@uncc.edu" /></label>
+      <label>CLT Web: <input id="link1" type="url" required placeholder="Clt Web" value="https://webpages.charlotte.edu/csande53/" /></label>
+      <label>Github: <input id="link2" type="url" required placeholder="GitHub URL" value="https://github.com/csande53" /></label>
+      <label>ITIS3135.io <input id="link3" type="url" required placeholder="Github Profile" value="https://colbyasanders22.github.io/" /></label>
+      <label>FreeCodeCamp <input id="link4" type="url" required placeholder="FreeCodeCamp Profile" value="https://webpages.charlotte.edu/csande53/resume.pdf" /></label>
+      <label>LinkedIn: <input id="link5" type="url" required placeholder="LinkedIn" value="https://www.linkedin.com/in/colby-sanders" /></label>
     </fieldset>
 
     <button type="submit" id="submitBtn">Submit</button>
