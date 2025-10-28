@@ -25,14 +25,6 @@ const resetBtn     = document.getElementById("resetBtn");
 const addCourseBtn = document.getElementById("addCourseBtn");
 const coursesList  = document.getElementById("courses");
 
-const pictureFileInput = document.getElementById("pictureFile");
-const imagePreview = document.getElementById("imagePreview");
-
-pictureFileInput.addEventListener("change", () => {
-  const file = pictureFileInput.files[0];
-  imagePreview.src = file ? URL.createObjectURL(file) : "images/skitrip.jpg";
-});
-
 /* Add Course + Remove */
 if (addCourseBtn && coursesList) {
   addCourseBtn.addEventListener("click", function () {
@@ -85,6 +77,23 @@ if (formElement) {
           return `${q('input[name="course_dept"]')} ${q('input[name="course_num"]')} — ${q('input[name="course_name"]')} :: ${q('input[name="course_reason"]')}`;
         })
       : [];
+
+      const pictureUrlInput  = document.getElementById("pictureUrl");
+const pictureFileInput = document.getElementById("pictureFile");
+const imagePreview     = document.getElementById("imagePreview");
+
+// Load the URL from the input as soon as the page loads
+imagePreview.src = pictureUrlInput.value.trim();
+
+// If user uploads a file, override the preview
+pictureFileInput.addEventListener("change", () => {
+  const file = pictureFileInput.files[0];
+  if (file) {
+    imagePreview.src = URL.createObjectURL(file);
+  } else {
+    imagePreview.src = pictureUrlInput.value.trim();
+  }
+});
 
     // Uploaded image overrides URL
     const picInput = document.getElementById("pictureFile");

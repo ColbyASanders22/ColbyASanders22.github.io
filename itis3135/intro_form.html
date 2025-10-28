@@ -10,11 +10,8 @@
 </head>
 <body>
 <main>
-    <header>
-    <h1>Build Your Own Webpage</h1>
-    </header>
-    <p>Please enter your information below and we will generate a simple webpage for you!</p>
-    <h2>Please Submit the Form Below</h2>
+    <div data-include="components/header.html"></div>
+    <h2>Build Your Own Website!</h2>
 
     <form id="form">
         <!--Names-->
@@ -55,6 +52,7 @@
                placeholder="images/skitrip.jpg"
                value="images/skitrip.jpg" />
       </label>
+      <img id="imagePreview" alt="Preview" style="max-width: 220px; display: block; margin-top: 10px;">
       <label>Upload Picture (optional)
         <input id="pictureFile" type="file" accept="image/*" />
       </label>
@@ -121,10 +119,9 @@
     </form>
 
 
-    <footer>
-        <p>Designed by © 2025 <a href="CSandEnterprises/index.html">CSandEnterprises</a></p>
-    </footer>
+  <div data-include="components/footer.html"></div>
 
+    <script src="scripts/HTMLInclude.min.js"></script>
     <script src="scripts/introduction.js" defer></script>
 </main>
 </body>
