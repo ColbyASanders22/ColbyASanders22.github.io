@@ -78,22 +78,6 @@ if (formElement) {
         })
       : [];
 
-      const pictureUrlInput  = document.getElementById("pictureUrl");
-const pictureFileInput = document.getElementById("pictureFile");
-const imagePreview     = document.getElementById("imagePreview");
-
-// Load the URL from the input as soon as the page loads
-imagePreview.src = pictureUrlInput.value.trim();
-
-// If user uploads a file, override the preview
-pictureFileInput.addEventListener("change", () => {
-  const file = pictureFileInput.files[0];
-  if (file) {
-    imagePreview.src = URL.createObjectURL(file);
-  } else {
-    imagePreview.src = pictureUrlInput.value.trim();
-  }
-});
 
     // Uploaded image overrides URL
     const picInput = document.getElementById("pictureFile");
