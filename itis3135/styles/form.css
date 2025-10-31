@@ -93,4 +93,14 @@ li {
   margin: 20px auto;       
   border-radius: 10px;     
 }
+#generated-section pre code {
+  color: #69FFF1;       
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #1e1e1e; 
+  display: block;
+  padding: 1em;
+  border-radius: 8px;
+  white-space: pre-wrap; 
+}
 
