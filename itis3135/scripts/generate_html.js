@@ -1,12 +1,14 @@
 (() => {
   // ---------- helpers ----------
-  const esc = (s) =>
-    String(s ?? "")
-      .replaceAll("&","&amp;")
-      .replaceAll("<","&lt;")
-      .replaceAll(">","&gt;")
-      .replaceAll('"',"&quot;")
-      .replaceAll("'","&#39;");
+const esc = (s) => {
+  s = (s === null || s === undefined) ? "" : String(s);
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+};
 
   const collectCourses = () => {
     const ul = document.querySelector("#courses");
