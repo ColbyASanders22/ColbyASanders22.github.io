@@ -1,193 +1,202 @@
-(() => {
+(function () {
   // ---------- helpers ----------
-const esc = (s) => {
-  s = (s === null || s === undefined) ? "" : String(s);
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-};
+  function esc(s) {
+    if (s === null || s === undefined) s = "";
+    s = String(s);
+    // Use regex (works everywhere)
+    return s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
 
-  const collectCourses = () => {
-    const ul = document.querySelector("#courses");
+  function getVal(form, selector) {
+    var el = form.querySelector(selector);
+    return el && typeof el.value !== "undefined" ? el.value : "";
+  }
+
+  function collectCourses() {
+    var ul = document.querySelector("#courses");
     if (!ul) return [];
-    return [...ul.querySelectorAll("li")]
-      .map(li => {
-        const input = li.querySelector("input, textarea");
-        return (input ? input.value : li.textContent || "").trim();
-      })
-      .filter(Boolean);
-  };
+    var lis = ul.querySelectorAll("li");
+    var out = [];
+    for (var i = 0; i < lis.length; i++) {
+      var li = lis[i];
+      var input = li.querySelector("input, textarea");
+      var txt = input ? input.value : li.textContent;
+      txt = txt ? String(txt).trim() : "";
+      if (txt) out.push(txt);
+    }
+    return out;
+  }
 
-  const collectBullets = (form) => {
-    const ids = ["b1","b2","b3","b4","b5","b6","b7"];
-    return ids.map(id => {
-  const el = form.querySelector("#" + id);
-  return el && el.value ? el.value.trim() : "";
-}).filter(Boolean);
-  };
+  function collectBullets(form) {
+    var ids = ["b1","b2","b3","b4","b5","b6","b7"];
+    var out = [];
+    for (var i = 0; i < ids.length; i++) {
+      var el = form.querySelector("#" + ids[i]);
+      var v = el && el.value ? String(el.value).trim() : "";
+      if (v) out.push(v);
+    }
+    return out;
+  }
 
-  const buildIntroHtml = (form) => {
-const firstEl = form.querySelector("#firstName");
-const middleEl = form.querySelector("#middleName");
-const lastEl = form.querySelector("#lastName");
-const nickEl = form.querySelector("#nickname");
-const mascotAdjEl = form.querySelector("#mascotAdj");
-const mascotAnimalEl = form.querySelector("#mascotAnimal");
+  function buildIntroHtml(form) {
+    var first       = getVal(form, "#firstName");
+    var middle      = getVal(form, "#middleName");
+    var last        = getVal(form, "#lastName");
+    var nick        = getVal(form, "#nickname");
 
-const first = firstEl && firstEl.value ? firstEl.value : "";
-const middle = middleEl && middleEl.value ? middleEl.value : "";
-const last = lastEl && lastEl.value ? lastEl.value : "";
-const nick = nickEl && nickEl.value ? nickEl.value : "";
-const mascotAdj = mascotAdjEl && mascotAdjEl.value ? mascotAdjEl.value : "";
-const mascotAnimal = mascotAnimalEl && mascotAnimalEl.value ? mascotAnimalEl.value : "";
+    var mascotAdj   = getVal(form, "#mascotAdj");
+    var mascotAnimal= getVal(form, "#mascotAnimal");
 
-    const picUrl = form.querySelector("#pictureUrl")?.value || "";
-    const picCap = form.querySelector("#pictureCap")?.value || "";
-    const personal = form.querySelector("#personalStatement")?.value || "";
-    const bullets = collectBullets(form);
-    const courses = collectCourses();
+    var picUrl      = getVal(form, "#pictureUrl");
+    var picCap      = getVal(form, "#pictureCap");
+    var personal    = getVal(form, "#personalStatement");
 
-    const quote = form.querySelector("#quote")?.value || "";
-    const quoteAuthor = form.querySelector("#quoteAuthor")?.value || "";
-    const funny = form.querySelector("#funny")?.value || "";
-    const share = form.querySelector("#share")?.value || "";
+    var bullets     = collectBullets(form);
+    var courses     = collectCourses();
 
-    const fullName = [first, middle, last].filter(Boolean).join(" ");
-    const starTitle = [
-      `${fullName}${nick ? ' "' + nick + '"' : ""}`,
-      [mascotAdj, mascotAnimal].filter(Boolean).join(" ")
-    ].filter(Boolean).join(" ★ ");
+    var quote       = getVal(form, "#quote");
+    var quoteAuthor = getVal(form, "#quoteAuthor");
+    var funny       = getVal(form, "#funny");
+    var share       = getVal(form, "#share");
 
-    const figure = picUrl ? `
-<figure>
+    var fullName = [first, middle, last].filter(function(x){ return x && x.trim(); }).join(" ");
+    var titleRight = [mascotAdj, mascotAnimal].filter(function(x){ return x && x.trim(); }).join(" ");
+    var nameLine = fullName + (nick ? (' "' + nick + '"') : "");
+    var starTitle = [nameLine, titleRight].filter(function(x){ return x && x.trim(); }).join(" ★ ");
+
+    var figure = picUrl ? (
+`<figure>
   <img src="${esc(picUrl)}" alt="Photo of ${esc(fullName)}">
   ${picCap ? `<figcaption>${esc(picCap)}</figcaption>` : ""}
-</figure>` : "";
+</figure>`
+    ) : "";
 
-    const bulletsBlock = bullets.length ? `
-  <li><strong>Main Points:</strong>
+    var bulletsBlock = bullets.length ? (
+`  <li><strong>Main Points:</strong>
     <ul>
-${bullets.map(b => `      <li>${esc(b)}</li>`).join("\n")}
+${bullets.map(function(b){ return "      <li>" + esc(b) + "</li>"; }).join("\n")}
     </ul>
-  </li>` : "";
+  </li>`
+    ) : "";
 
-    const coursesBlock = courses.length ? `
-  <li><strong>Courses:</strong>
+    var coursesBlock = courses.length ? (
+`  <li><strong>Courses:</strong>
     <ul>
-${courses.map(c => `      <li>${esc(c)}</li>`).join("\n")}
+${courses.map(function(c){ return "      <li>" + esc(c) + "</li>"; }).join("\n")}
     </ul>
-  </li>` : "";
+  </li>`
+    ) : "";
 
-    const quoteBlock = quote ? `
-  <li><strong>Quote:</strong> “${esc(quote)}” — ${esc(quoteAuthor)}</li>` : "";
-    const funnyBlock = funny ? `
-  <li><strong>Funny thing:</strong> ${esc(funny)}</li>` : "";
-    const shareBlock = share ? `
-  <li><strong>Something I’d like to share:</strong> ${esc(share)}</li>` : "";
+    var quoteBlock = quote ? `  <li><strong>Quote:</strong> “${esc(quote)}” — ${esc(quoteAuthor)}</li>` : "";
+    var funnyBlock = funny ? `  <li><strong>Funny thing:</strong> ${esc(funny)}</li>` : "";
+    var shareBlock = share ? `  <li><strong>Something I’d like to share:</strong> ${esc(share)}</li>` : "";
 
     return `<h2>Introduction HTML</h2>
 ${starTitle ? `<h3>${esc(starTitle)}</h3>` : ""}${figure}
 <ul>
   <li><strong>Personal Statement:</strong> ${esc(personal)}</li>${bulletsBlock}${coursesBlock}${quoteBlock}${funnyBlock}${shareBlock}
 </ul>`;
-  };
+  }
 
-  // ---------- anchor management (so we can always insert above the footer) ----------
-  let beforeFooterAnchor = null;
+  // ---------- anchor management (always insert above footer) ----------
+  var beforeFooterAnchor = null;
 
-  const ensureAnchorBeforeFooter = () => {
-    if (beforeFooterAnchor && beforeFooterAnchor.isConnected) return beforeFooterAnchor;
+  function ensureAnchorBeforeFooter() {
+    if (beforeFooterAnchor && beforeFooterAnchor.parentNode) return beforeFooterAnchor;
 
-    const main = document.querySelector("main") || document.body;
-    // find the original include placeholder (if it still exists)
-    const includeSel = 'div[data-include="components/footer.html"]';
-    const inc = document.querySelector(includeSel);
+    var main = document.querySelector("main") || document.body;
+    var includeSel = 'div[data-include="components/footer.html"]';
+    var inc = document.querySelector(includeSel);
 
-    // Create an invisible anchor node
     beforeFooterAnchor = document.createComment("generated-html-anchor");
 
     if (inc && inc.parentNode) {
-      // Place anchor immediately BEFORE the include node
       inc.parentNode.insertBefore(beforeFooterAnchor, inc);
     } else {
-      // If include already replaced the node, try common footer containers
-      const footerLike = document.querySelector("footer, .site-footer, #footer") ||
-                         // last resort: last element in main
-                         main.lastElementChild;
+      var footerLike = document.querySelector("footer, .site-footer, #footer");
       if (footerLike && footerLike.parentNode) {
         footerLike.parentNode.insertBefore(beforeFooterAnchor, footerLike);
+      } else if (main && main.lastElementChild && main.lastElementChild.parentNode) {
+        main.lastElementChild.parentNode.insertBefore(beforeFooterAnchor, main.lastElementChild);
       } else {
-        // absolute fallback: append at the end of main (still above scripts)
         main.appendChild(beforeFooterAnchor);
       }
     }
     return beforeFooterAnchor;
-  };
+  }
 
-  // If the include later replaces/moves nodes, keep our anchor before footer
-  const watchForFooter = () => {
-    const mo = new MutationObserver(() => {
-      // If we lost the anchor or it's not before a footer-like thing, try to recreate/adjust
-      if (!beforeFooterAnchor || !beforeFooterAnchor.isConnected) {
-        ensureAnchorBeforeFooter();
-      }
-    });
-    mo.observe(document.body, { childList: true, subtree: true });
-  };
+  function watchForFooter() {
+    // MutationObserver is widely supported; if absent, we just skip
+    if (typeof MutationObserver === "function") {
+      var mo = new MutationObserver(function () {
+        if (!beforeFooterAnchor || !beforeFooterAnchor.parentNode) {
+          ensureAnchorBeforeFooter();
+        }
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    }
+  }
 
   // ---------- main action ----------
-  const generateHTML = () => {
-    const form = document.querySelector("#form");
+  function generateHTML() {
+    var form = document.querySelector("#form");
     if (!form) {
       alert("Error: Could not find the form (#form)");
       return;
     }
 
-    const introHtml = buildIntroHtml(form);
+    var introHtml = buildIntroHtml(form);
 
-    // Change heading + hide form
-    const h2 = document.querySelector("h2");
+    var h2 = document.querySelector("h2");
     if (h2) h2.textContent = "Introduction HTML";
+
     form.style.display = "none";
 
-    // Build section with code block
-    const section = document.createElement("section");
+    var section = document.createElement("section");
     section.id = "generated-section";
 
-    const pre = document.createElement("pre");
-    const code = document.createElement("code");
+    var pre = document.createElement("pre");
+    var code = document.createElement("code");
     code.textContent = introHtml; // literal, copyable HTML
     pre.appendChild(code);
     section.appendChild(pre);
 
-    // Inline styling (edit to taste)
+    // Inline styling
     section.style.margin = "2rem 0";
     pre.style.backgroundColor = "#1e1e1e";
-    pre.style.color = "#69FFF1";     // text color for generated code
+    pre.style.color = "#69FFF1";   // change to your preferred color
     pre.style.padding = "1rem";
     pre.style.borderRadius = "8px";
     pre.style.whiteSpace = "pre-wrap";
     pre.style.wordBreak = "break-word";
     pre.style.fontFamily = "monospace";
 
-    // Ensure anchor exists before footer, then insert BEFORE the anchor
-    const anchor = ensureAnchorBeforeFooter();
-    anchor.parentNode.insertBefore(section, anchor);
+    var anchor = ensureAnchorBeforeFooter();
+    if (anchor && anchor.parentNode) {
+      anchor.parentNode.insertBefore(section, anchor);
+    } else {
+      // absolute fallback
+      (document.querySelector("main") || document.body).appendChild(section);
+    }
 
-    // optional: scroll to it
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+    // optional scroll into view
+    if (section.scrollIntoView) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
-  // ---------- wiring ----------
-  const wire = () => {
-    document.querySelector("#generateHtmlBtn")?.addEventListener("click", generateHTML);
+  function wire() {
+    var btn = document.querySelector("#generateHtmlBtn");
+    if (btn) btn.addEventListener("click", generateHTML);
     window.generateHTML = generateHTML; // optional inline fallback
     ensureAnchorBeforeFooter();
     watchForFooter();
-  };
+  }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", wire);
