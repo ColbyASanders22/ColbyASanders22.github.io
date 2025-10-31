@@ -30,13 +30,19 @@ const esc = (s) => {
   };
 
   const buildIntroHtml = (form) => {
-    const first = form.querySelector("#firstName")?.value || "";
-    const middle = form.querySelector("#middleName")?.value || "";
-    const last = form.querySelector("#lastName")?.value || "";
-    const nick = form.querySelector("#nickname")?.value || "";
+const firstEl = form.querySelector("#firstName");
+const middleEl = form.querySelector("#middleName");
+const lastEl = form.querySelector("#lastName");
+const nickEl = form.querySelector("#nickname");
+const mascotAdjEl = form.querySelector("#mascotAdj");
+const mascotAnimalEl = form.querySelector("#mascotAnimal");
 
-    const mascotAdj = form.querySelector("#mascotAdj")?.value || "";
-    const mascotAnimal = form.querySelector("#mascotAnimal")?.value || "";
+const first = firstEl && firstEl.value ? firstEl.value : "";
+const middle = middleEl && middleEl.value ? middleEl.value : "";
+const last = lastEl && lastEl.value ? lastEl.value : "";
+const nick = nickEl && nickEl.value ? nickEl.value : "";
+const mascotAdj = mascotAdjEl && mascotAdjEl.value ? mascotAdjEl.value : "";
+const mascotAnimal = mascotAnimalEl && mascotAnimalEl.value ? mascotAnimalEl.value : "";
 
     const picUrl = form.querySelector("#pictureUrl")?.value || "";
     const picCap = form.querySelector("#pictureCap")?.value || "";
