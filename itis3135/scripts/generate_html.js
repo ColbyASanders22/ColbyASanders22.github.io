@@ -23,7 +23,10 @@ const esc = (s) => {
 
   const collectBullets = (form) => {
     const ids = ["b1","b2","b3","b4","b5","b6","b7"];
-    return ids.map(id => form.querySelector("#" + id)?.value?.trim()).filter(Boolean);
+    return ids.map(id => {
+  const el = form.querySelector("#" + id);
+  return el && el.value ? el.value.trim() : "";
+}).filter(Boolean);
   };
 
   const buildIntroHtml = (form) => {
