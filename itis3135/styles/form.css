@@ -103,4 +103,28 @@ li {
   border-radius: 8px;
   white-space: pre-wrap; 
 }
+.output-section {
+  background-color: #2E3338;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.output-section h2 {
+  color: #69FFF1;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.output-box {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
