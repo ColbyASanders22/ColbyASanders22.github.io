@@ -1,63 +1,68 @@
 (function () {
   // ---------- Helper Functions ----------
-  const $ = (id) => document.getElementById(id);
-  const val = (id) => {
-    const el = $(id);
+  function $(id) {
+    return document.getElementById(id);
+  }
+  function val(id) {
+    var el = $(id);
     return el ? String(el.value || "").trim() : "";
-  };
+  }
 
   // ---------- Parse Courses ----------
   function parseCourses() {
-    const root = $("courses");
+    var root = $("courses");
     if (!root) return [];
 
-    const rows = Array.from(
+    var rows = Array.from(
       root.querySelectorAll("li, .course-row, [data-course-row]")
     );
 
-    const FIELD_PATTERNS = [
+    var FIELD_PATTERNS = [
       { key: "department", test: /dept|department/i },
       { key: "number",     test: /\bnumber\b|(^|[^a-z])num([^a-z]|$)/i },
       { key: "name",       test: /\b(name|title|course)\b/i },
       { key: "reason",     test: /reason|why/i }
     ];
 
-    const detectField = (input) => {
-      const label = input.closest("label");
-      const labelText = (label && label.textContent ? label.textContent : "").trim();
-      const haystack = [
+    function detectField(input) {
+      var label = input.closest("label");
+      var labelText = (label && label.textContent ? label.textContent : "").trim();
+      var haystack = [
         input.name || "",
         input.id || "",
         input.className || "",
         input.placeholder || "",
         labelText
       ].join(" ").toLowerCase();
-      for (const { key, test } of FIELD_PATTERNS) {
-        if (test.test(haystack)) return key;
+      for (var i = 0; i < FIELD_PATTERNS.length; i++) {
+        var fp = FIELD_PATTERNS[i];
+        if (fp.test.test(haystack)) return fp.key;
       }
       return null;
-    };
+    }
 
-    const readRow = (rowEl) => {
-      const obj = { department: "", number: "", name: "", reason: "" };
-      const inputs = Array.from(rowEl.querySelectorAll("input, select, textarea"));
-      inputs.forEach((inp) => {
-        const k = detectField(inp);
+    function readRow(rowEl) {
+      var obj = { department: "", number: "", name: "", reason: "" };
+      var inputs = Array.from(rowEl.querySelectorAll("input, select, textarea"));
+      inputs.forEach(function (inp) {
+        var k = detectField(inp);
         if (k && !obj[k]) obj[k] = String(inp.value || "").trim();
       });
       return obj;
-    };
+    }
 
-    let result = [];
+    var result = [];
     if (rows.length) {
       result = rows
         .map(readRow)
-        .filter((c) => c.department || c.number || c.name || c.reason);
+        .filter(function (c) {
+          return c.department || c.number || c.name || c.reason;
+        });
     } else {
-      const inputs = Array.from(root.querySelectorAll("input, select, textarea"));
-      let current = { department: "", number: "", name: "", reason: "" };
-      inputs.forEach((inp) => {
-        const k = detectField(inp);
+      var inputs = Array.from(root.querySelectorAll("input, select, textarea"));
+      var current = { department: "", number: "", name: "", reason: "" };
+      inputs.forEach(function (inp) {
+        var k = detectField(inp);
         if (!k) return;
         if (current[k]) {
           if (current.department || current.number || current.name || current.reason) {
@@ -77,9 +82,9 @@
 
   // ---------- Build JSON ----------
   function buildJson() {
-    const middleName = val("middleName");
-    const middleInitial = middleName ? middleName[0].toUpperCase() : "";
-    const preferredName = val("nickname") || val("firstName");
+    var middleName = val("middleName");
+    var middleInitial = middleName ? middleName[0].toUpperCase() : "";
+    var preferredName = val("nickname") || val("firstName");
 
     return {
       firstName: val("firstName"),
@@ -101,22 +106,25 @@
 
   // ---------- Display JSON ----------
   function showJsonReplacingForm(jsonText) {
-    const form = $("form") || $("form#form") || document.querySelector("form#form");
+    var form =
+      $("form") ||
+      $("form#form") ||
+      document.querySelector("form#form");
     if (!form) return;
 
-    const titleEl = $("pageTitle") || document.querySelector("h2");
+    var titleEl = $("pageTitle") || document.querySelector("h2");
     if (titleEl) titleEl.textContent = "Introduction JSON";
 
-    // Section wrapper styled similarly to generate_html.js
-    const section = document.createElement("section");
+    var section = document.createElement("section");
     section.className = "output-section";
 
-    const h2 = document.createElement("h2");
+    var h2 = document.createElement("h2");
     h2.textContent = "Your Introduction as JSON";
 
-    const pre = document.createElement("pre");
+    var pre = document.createElement("pre");
     pre.className = "output-box";
-    const code = document.createElement("code");
+
+    var code = document.createElement("code");
     code.className = "language-json";
     code.textContent = jsonText;
 
@@ -126,23 +134,28 @@
 
     form.replaceWith(section);
 
-if (window.hljs && typeof window.hljs.highlightElement === "function") {
-  try {
-    window.hljs.highlightElement(code);
-  } catch (_) {
-    // ignore highlight.js errors
+    // syntax highlighting (optional)
+    if (window.hljs && typeof window.hljs.highlightElement === "function") {
+      try {
+        window.hljs.highlightElement(code);
+      } catch (e) {
+        // ignore highlight.js errors
+      }
+    }
   }
-} // closes the if properly
 
-// -------- Generate & Replace --------
-function handleGenerateJson() {
-  const data = buildJson();
-  const jsonText = JSON.stringify(data, null, 2);
-  showJsonReplacingForm(jsonText);
-}
+  // ---------- Generate & Replace ----------
+  function handleGenerateJson() {
+    var data = buildJson();
+    var jsonText = JSON.stringify(data, null, 2);
+    showJsonReplacingForm(jsonText);
+  }
 
   // ---------- Initialize ----------
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = $("generateJsonBtn");
-    if (btn) btn.addEventListener("click", handleGenerateJson);
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = $("generateJsonBtn");
+    if (btn) {
+      btn.addEventListener("click", handleGenerateJson);
+    }
   });
+})();  // close the IIFE
