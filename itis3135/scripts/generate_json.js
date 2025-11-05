@@ -3,7 +3,7 @@
   const $ = (id) => document.getElementById(id);
   const val = (id) => {
     const el = $(id);
-    return el ? String(el.value ?? "").trim() : "";
+    return el ? String(el.value || "").trim() : "";
   };
 
   // ---------- Parse Courses ----------
