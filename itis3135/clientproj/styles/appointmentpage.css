@@ -1,0 +1,25 @@
+.navigation {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+    color: #457B9D;
+}
+h2, h3 {
+    color: #8ECAE6;
+}
+body {
+    background-color: #023047;
+    font-family: 'Poppins', sans-serif;
+    width: 800px;
+    margin: 0 auto;  
+}
+a {
+    color: #8ECAE6;
+}
+p {
+    color: #F5F5F5;
+}
