@@ -147,4 +147,3 @@ function handleGenerateJson() {
     if (btn) btn.addEventListener("click", handleGenerateJson);
   });
 
-})();
