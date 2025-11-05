@@ -127,7 +127,11 @@
     form.replaceWith(section);
 
     if (window.hljs && typeof window.hljs.highlightElement === "function") {
-      try { window.hljs.highlightElement(code); } catch (_) {}
+      try {
+  window.hljs.highlightElement(code);
+} catch (_) {
+  
+}
     }
   }
 
