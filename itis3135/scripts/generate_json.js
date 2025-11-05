@@ -127,7 +127,7 @@
     form.replaceWith(section);
 
     if (window.hljs && typeof window.hljs.highlightElement === "function") {
-      try {
+try {
   window.hljs.highlightElement(code);
 } catch (_) {
   
