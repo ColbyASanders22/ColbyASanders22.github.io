@@ -126,11 +126,12 @@
 
     form.replaceWith(section);
 
-    if (window.hljs && typeof window.hljs.highlightElement === "function") {
-try {
-  window.hljs.highlightElement(code);
-} catch (_) {
-  
+if (window.hljs && typeof window.hljs.highlightElement === "function") {
+  try {
+    window.hljs.highlightElement(code);
+  } catch (err) {
+    console.warn("Highlight.js failed to highlight:", err);
+  }
 }
     }
   }
