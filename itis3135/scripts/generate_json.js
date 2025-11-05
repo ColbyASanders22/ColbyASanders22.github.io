@@ -146,4 +146,3 @@ function handleGenerateJson() {
     const btn = $("generateJsonBtn");
     if (btn) btn.addEventListener("click", handleGenerateJson);
   });
-
