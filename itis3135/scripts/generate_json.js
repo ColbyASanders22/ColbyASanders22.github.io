@@ -129,19 +129,17 @@
 if (window.hljs && typeof window.hljs.highlightElement === "function") {
   try {
     window.hljs.highlightElement(code);
-  } catch (err) {
-    console.warn("Highlight.js failed to highlight:", err);
+  } catch (_) {
+    // ignore highlight.js errors
   }
-}
-    }
-  }
+} // closes the if properly
 
-  // ---------- Generate & Replace ----------
-  function handleGenerateJson() {
-    const data = buildJson();
-    const jsonText = JSON.stringify(data, null, 2);
-    showJsonReplacingForm(jsonText);
-  }
+// -------- Generate & Replace --------
+function handleGenerateJson() {
+  const data = buildJson();
+  const jsonText = JSON.stringify(data, null, 2);
+  showJsonReplacingForm(jsonText);
+}
 
   // ---------- Initialize ----------
   document.addEventListener("DOMContentLoaded", () => {
