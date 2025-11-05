@@ -23,7 +23,8 @@
     ];
 
     const detectField = (input) => {
-      const labelText = (input.closest("label")?.textContent || "").trim();
+      const label = input.closest("label");
+      const labelText = (label && label.textContent ? label.textContent : "").trim();
       const haystack = [
         input.name || "",
         input.id || "",
