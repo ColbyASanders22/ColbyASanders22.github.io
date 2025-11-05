@@ -19,7 +19,7 @@
       { key: "department", test: /dept|department/i },
       { key: "number",     test: /\bnumber\b|(^|[^a-z])num([^a-z]|$)/i },
       { key: "name",       test: /\b(name|title|course)\b/i },
-      { key: "reason",     test: /reason|why/i },
+      { key: "reason",     test: /reason|why/i }
     ];
 
     const detectField = (input) => {
@@ -30,7 +30,7 @@
         input.id || "",
         input.className || "",
         input.placeholder || "",
-        labelText,
+        labelText
       ].join(" ").toLowerCase();
       for (const { key, test } of FIELD_PATTERNS) {
         if (test.test(haystack)) return key;
