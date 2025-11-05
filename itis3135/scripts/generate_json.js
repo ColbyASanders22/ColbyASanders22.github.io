@@ -43,7 +43,7 @@
       const inputs = Array.from(rowEl.querySelectorAll("input, select, textarea"));
       inputs.forEach((inp) => {
         const k = detectField(inp);
-        if (k && !obj[k]) obj[k] = String(inp.value ?? "").trim();
+        if (k && !obj[k]) obj[k] = String(inp.value || "").trim();
       });
       return obj;
     };
