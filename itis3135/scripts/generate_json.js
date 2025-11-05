@@ -65,7 +65,7 @@
           }
           current = { department: "", number: "", name: "", reason: "" };
         }
-        current[k] = String(inp.value ?? "").trim();
+        current[k] = String(inp.value || "").trim();
       });
       if (current.department || current.number || current.name || current.reason) {
         result.push(current);
