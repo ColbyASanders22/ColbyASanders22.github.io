@@ -39,10 +39,12 @@ ul {
 
 .lesson-calculator h2 {
   margin-top: 0;
+  
 }
 
 .lesson-calculator p {
   margin-bottom: 1rem;
+  
 }
 
 .calculator-grid {
@@ -76,6 +78,11 @@ ul {
   font-size: 1.05rem;
   color: #c44b3e; 
 }
+.calculator-summary {
+  grid-column: 1 / -1;
+  margin-top: 0.6rem;
+}
+
 
 
 @media (max-width: 600px) {
