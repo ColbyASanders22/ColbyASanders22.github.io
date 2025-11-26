@@ -5,21 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Make an Appointment | Hunter’s Guitar Lessons</title>
   <link rel="stylesheet" href="styles/appointmentpage.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div data-include="components/header.html"></div>
-    <h1>Make an Appointment</h1>
 
+  <h1>Make an Appointment</h1>
 
-  <main>
-    <section>
+  <main class="appointments-layout">
+    <!-- LEFT: form -->
+    <section class="appointments-form-column">
       <h2>Book Your Lesson</h2>
       <form id="appointmentForm">
-        <label>Name: <input type="text" required></label><br>
-        <label>Email: <input type="email" required></label><br>
-        <label>Lesson Type:
-          <select required>
+        <label>
+          Name:
+          <input type="text" id="customer-name" name="name" required>
+        </label><br>
+
+        <label>
+          Email:
+          <input type="email" id="customer-email" name="email" required>
+        </label><br>
+
+        <label>
+          Lesson Type:
+          <select id="lesson-type" name="lessonType" required>
             <option value="">Select a lesson type</option>
             <option>Beginner</option>
             <option>Intermediate</option>
@@ -27,17 +37,38 @@
             <option>Virtual</option>
           </select>
         </label><br>
-        <label>Date: <input type="date" required></label><br>
-        <label>Time: <input type="time" required></label><br>
+
+        <label>
+          Date:
+          <input type="date" id="appointment-date" name="date" required>
+        </label><br>
+
+        <label>
+          Time:
+          <input type="time" id="appointment-time" name="time" required>
+        </label><br>
+
         <button type="submit">Schedule Lesson</button>
+        <p id="appointment-feedback" class="appointment-feedback" aria-live="polite"></p>
       </form>
     </section>
+
+   
+    
+      <h2>Upcoming Lessons</h2>
+      <p id="no-appointments-message">No lessons booked yet.</p>
+      <ul id="upcoming-appointments" class="appointment-list"></ul>
+    
   </main>
 
   <footer>
-    <p>&copy; 2025 Hunter’s Guitar Lessons | Designed by CSandEnterprises</p>
+    <p> 2025 Hunter’s Guitar Lessons | Designed by CSandEnterprises</p>
   </footer>
 
+  
+  <script src="../scripts/appointments.js" defer></script>
+
+  
   <script src="../scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
