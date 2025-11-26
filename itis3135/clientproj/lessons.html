@@ -8,19 +8,46 @@
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div data-include="components/header.html"></div>
-    <h1>Lesson Types</h1>
-
+  <div data-include="components/header.html"></div>
+  <h1>Lesson Types</h1>
 
   <main>
     <section>
       <h2>Types of Guitar Lessons</h2>
       <ul>
-        <li><strong>Beginner Lessons:</strong> Learn chords, strumming, and rhythm basics.</li>
-        <li><strong>Intermediate Lessons:</strong> Explore scales, improvisation, and styles.</li>
-        <li><strong>Advanced Lessons:</strong> Master complex solos and songwriting.</li>
-        <li><strong>Virtual Lessons:</strong> Learn from anywhere via Zoom or Google Meet.</li>
+        <li><strong>Beginner Lessons:</strong> Learn chords, strumming, and rhythm basics. - $40</li>
+        <li><strong>Intermediate Lessons:</strong> Explore scales, improvisation, and styles. - $40</li>
+        <li><strong>Advanced Lessons:</strong> Master complex solos and songwriting. - $40</li>
+        <li><strong>Virtual Lessons:</strong> Learn from anywhere via Zoom or Google Meet. - $40</li>
       </ul>
+    </section>
+
+    <!-- Price Calculator Interactivity -->
+    <section class="lesson-calculator" aria-label="Lesson price calculator">
+      <h2>Lesson Price Calculator</h2>
+      <p>Use this calculator to estimate the total cost of your lessons with Hunter.</p>
+
+      <div class="calculator-grid">
+        <div class="calculator-field">
+          <label for="calc-lesson-type">Lesson type</label>
+          <select id="calc-lesson-type" name="calc-lesson-type">
+            <option value="beginner">Beginner ($40/lesson)</option>
+            <option value="intermediate">Intermediate ($40/lesson)</option>
+            <option value="advanced">Advanced ($40/lesson)</option>
+            <option value="virtual">Virtual ($40/lesson)</option>
+          </select>
+        </div>
+
+        <div class="calculator-field">
+          <label for="calc-lesson-count">Number of lessons</label>
+          <input type="number" id="calc-lesson-count" name="calc-lesson-count" min="1" value="4">
+        </div>
+
+        <div class="calculator-field calculator-summary">
+          <p id="calc-summary">4 Beginner lessons at $40 each.</p>
+          <p id="calc-total" class="calc-total-amount">Estimated total: $160.00</p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -28,6 +55,7 @@
     <p>&copy; 2025 Hunter’s Guitar Lessons | Designed by CSandEnterprises</p>
   </footer>
 
+  <script src="scripts/lesson-calculator.js" defer></script>
   <script src="../scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
