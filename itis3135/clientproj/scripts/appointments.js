@@ -1,7 +1,6 @@
 /**
  * Hunter's Guitar Lessons - Appointments Interactivity
- * Interactivity: Upcoming Lessons sidebar
- * - On form submit, add lesson to sidebar and save it in localStorage.
+ * Interactivity: Upcoming Lessons sidebar + Delete functionality
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,37 +46,40 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderAppointments() {
     list.innerHTML = "";
 
-    const now = new Date();
-
-    const futureAppointments = appointments
-      .map((appt) => ({
-        ...appt,
-        dateObj: new Date(appt.dateTime),
-      }))
-      .filter((appt) => !isNaN(appt.dateObj.getTime()) && appt.dateObj >= now)
-      .sort((a, b) => a.dateObj - b.dateObj);
-
-    if (futureAppointments.length === 0) {
+    if (!appointments || appointments.length === 0) {
       emptyMsg.style.display = "block";
       return;
     }
 
     emptyMsg.style.display = "none";
 
-    futureAppointments.slice(0, 5).forEach((appt) => {
+    const sortedAppointments = appointments
+      .map((appt) => ({
+        ...appt,
+        dateObj: new Date(appt.dateTime),
+      }))
+      .sort((a, b) => a.dateObj - b.dateObj);
+
+    sortedAppointments.slice(0, 5).forEach((appt) => {
       const li = document.createElement("li");
       li.classList.add("appointment-card");
+      li.dataset.id = appt.id; // store appointment ID in HTML
 
       const header = document.createElement("div");
       header.classList.add("appointment-card-header");
 
       const dateSpan = document.createElement("span");
       dateSpan.classList.add("appointment-date-time");
-      dateSpan.textContent = formatDateTime(appt.dateObj);
+
+      if (!isNaN(appt.dateObj.getTime())) {
+        dateSpan.textContent = formatDateTime(appt.dateObj);
+      } else {
+        dateSpan.textContent = "Date/time not set";
+      }
 
       const typeSpan = document.createElement("span");
       typeSpan.classList.add("appointment-lesson-type");
-      typeSpan.textContent = appt.lessonType;
+      typeSpan.textContent = appt.lessonType || "Guitar Lesson";
 
       header.appendChild(dateSpan);
       header.appendChild(typeSpan);
@@ -86,12 +88,32 @@ document.addEventListener("DOMContentLoaded", () => {
       customerP.classList.add("appointment-customer");
       customerP.textContent = appt.name;
 
+      // ✅ Delete button
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.classList.add("delete-appointment-btn");
+      deleteBtn.setAttribute("aria-label", "Delete appointment");
+
       li.appendChild(header);
       li.appendChild(customerP);
+      li.appendChild(deleteBtn);
 
       list.appendChild(li);
     });
   }
+
+  // ✅ Delete appointment when clicking delete button
+  list.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("delete-appointment-btn")) return;
+
+    const li = e.target.closest("li");
+    const idToDelete = Number(li.dataset.id);
+
+    appointments = appointments.filter((appt) => appt.id !== idToDelete);
+
+    saveAppointments();
+    renderAppointments();
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

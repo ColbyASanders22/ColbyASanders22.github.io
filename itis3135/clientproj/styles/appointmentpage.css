@@ -27,3 +27,13 @@ label {
     color: #F5F5F5;
     
 }
+.delete-appointment-btn {
+  background: #b63b3b;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 0.4rem;
+}
