@@ -52,7 +52,8 @@ label {
 #appointmentForm select {
   display: block;
   width: 100%;
-  margin-top: 0.35rem;  
+  box-sizing: border-box;
+  margin-top: 0.35rem;
   padding: 0.5rem 0.6rem;
   border-radius: 6px;
   border: 1px solid #ccc;
