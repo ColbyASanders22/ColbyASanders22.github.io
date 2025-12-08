@@ -1,8 +1,3 @@
-/**
- * Hunter's Guitar Lessons - Appointments Interactivity
- * Interactivity: Upcoming Lessons sidebar + Delete functionality
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("appointmentForm");
   if (!form) return;
@@ -14,22 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_KEY = "huntersGuitarLessonsAppointments";
 
   let appointments = [];
-
-  function loadAppointments() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) {
-      appointments = [];
-      renderAppointments();
-      return;
-    }
-    try {
-      appointments = JSON.parse(stored);
-    } catch (e) {
-      console.error("Error parsing stored appointments", e);
-      appointments = [];
-    }
-    renderAppointments();
-  }
 
   function saveAppointments() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(appointments));
@@ -56,14 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const sortedAppointments = appointments
       .map((appt) => ({
         ...appt,
-        dateObj: new Date(appt.dateTime),
+        dateObj: new Date(appt.dateTime)
       }))
       .sort((a, b) => a.dateObj - b.dateObj);
 
     sortedAppointments.slice(0, 5).forEach((appt) => {
       const li = document.createElement("li");
       li.classList.add("appointment-card");
-      li.dataset.id = appt.id; // store appointment ID in HTML
+      li.dataset.id = appt.id;
 
       const header = document.createElement("div");
       header.classList.add("appointment-card-header");
@@ -88,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
       customerP.classList.add("appointment-customer");
       customerP.textContent = appt.name;
 
-      // ✅ Delete button
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Delete";
       deleteBtn.classList.add("delete-appointment-btn");
@@ -102,7 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Delete appointment when clicking delete button
+  function loadAppointments() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+
+    if (!stored) {
+      appointments = [];
+      renderAppointments();
+      return;
+    }
+
+    try {
+      appointments = JSON.parse(stored);
+    } catch (e) {
+      appointments = [];
+    }
+
+    renderAppointments();
+  }
+
   list.addEventListener("click", (e) => {
     if (!e.target.classList.contains("delete-appointment-btn")) return;
 
@@ -150,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name,
       email,
       lessonType,
-      dateTime: dateObj.toISOString(),
+      dateTime: dateObj.toISOString()
     };
 
     appointments.push(newAppointment);
