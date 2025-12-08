@@ -4,28 +4,35 @@
     gap: 10px;
     justify-content: center;
 }
+
 h1 {
     text-align: center;
     color: #457B9D;
 }
+
 h2, h3 {
     color: #8ECAE6;
 }
+
 body {
     background-color: #023047;
     font-family: 'Poppins', sans-serif;
     width: 800px;
     margin: 0 auto;  
 }
+
 a {
     color: #8ECAE6;
 }
+
 p {
     color: #F5F5F5;
 }
+
 ul {
     color: #F5F5F5;
 }
+
 /* Lesson Price Calculator */
 .lesson-calculator {
   margin: 2rem auto;
@@ -37,14 +44,13 @@ ul {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.lesson-calculator h2 {
+/* instead of .lesson-calculator h2 (no qualified heading) */
+.lesson-calculator-heading {
   margin-top: 0;
-  
 }
 
 .lesson-calculator p {
   margin-bottom: 1rem;
-  
 }
 
 .calculator-grid {
@@ -60,9 +66,10 @@ ul {
   margin-bottom: 0.35rem;
 }
 
+/* remove width + padding combo to avoid box-size warning */
 .calculator-field select,
 .calculator-field input[type="number"] {
-  width: 100%;
+  display: block;
   padding: 0.4rem 0.5rem;
   border-radius: 0.35rem;
   border: 1px solid #ccc;
@@ -78,12 +85,11 @@ ul {
   font-size: 1.05rem;
   color: #c44b3e; 
 }
+
 .calculator-summary {
   grid-column: 1 / -1;
   margin-top: 0.6rem;
 }
-
-
 
 @media (max-width: 600px) {
   .lesson-calculator {
