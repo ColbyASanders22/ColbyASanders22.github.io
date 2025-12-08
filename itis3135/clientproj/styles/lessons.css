@@ -33,7 +33,7 @@ ul {
     color: #F5F5F5;
 }
 
-/* Lesson Price Calculator */
+
 .lesson-calculator {
   margin: 2rem auto;
   max-width: 700px;
@@ -44,7 +44,7 @@ ul {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* instead of .lesson-calculator h2 (no qualified heading) */
+
 .lesson-calculator-heading {
   margin-top: 0;
 }
@@ -53,13 +53,17 @@ ul {
   margin-bottom: 1rem;
 }
 
+label {
+  color: #ffffff;
+}
+
 .calculator-field label {
   display: block;
   font-weight: 600;
   margin-bottom: 0.35rem;
 }
 
-/* remove width + padding combo to avoid box-size warning */
+
 .calculator-field select,
 .calculator-field input[type="number"] {
   display: block;
@@ -67,6 +71,7 @@ ul {
   border-radius: 0.35rem;
   border: 1px solid #ccc;
   font: inherit;
+  margin-bottom: 20px;
 }
 
 .calculator-summary p {
