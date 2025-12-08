@@ -29,7 +29,7 @@ p {
     color: #F5F5F5;
 }
 
-/* Hero slideshow */
+
 .hero-slideshow {
   max-width: 900px;
   margin: 2rem auto;
@@ -57,12 +57,12 @@ p {
   transition: opacity 0.5s ease-in-out;
 }
 
-/* was .slide.active */
+
 .slides .active {
   display: block;
 }
 
-/* Prev/Next buttons */
+
 .slide-nav {
   position: absolute;
   top: 50%;
@@ -78,7 +78,7 @@ p {
   z-index: 2;
 }
 
-/* was .slide-nav.prev and .slide-nav.next */
+
 .prev {
   left: 0.5rem;
 }
@@ -102,13 +102,15 @@ p {
 .dot {
   width: 10px;
   height: 10px;
+  box-sizing: border-box; 
   border-radius: 50%;
-  border: 2px solid #c44b3e; 
+  border: 2px solid #c44b3e;
   background-color: transparent;
   cursor: pointer;
 }
 
-/* was .dot.active */
+
+
 .slide-dots .active {
   background-color: #c44b3e;
 }
