@@ -56,9 +56,11 @@ ul {
 .calculator-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
   align-items: flex-start;
 }
+
 
 .calculator-field label {
   display: block;
