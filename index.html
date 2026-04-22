@@ -1,136 +1,119 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio Webpage</title>
-	<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-	
-	<style>
-		body {
-			background-color: #393E41;
-			font-family: Arial, sans-serif;
-			color: #E8EBF7;
-			margin: 0 auto;
-			max-width: 900px;
-			width: 90%;
-			display: auto;
-		}
-
-		h1, h2 {
-			text-align: center;
-			font-family:'Courier New', Courier, monospace;
-		}
-
-		p {
-			color: #FFFFFF;
-			
-		}
-
-		ul {
-    		text-align: center;
-    		list-style-type: none;
-			margin: 0;
-			padding: 0;
-    		display: flex;
-    		gap: 15px;
-    		justify-content: center;
-		}
-
-		a{
-			color: #4ADB43;
-			display: inline-block;
-			transition: background-color 0.2s ease;
-		}
-		a:hover {
-			background-color: #3F88C5;
-			padding: 10px 10px;
-			border-radius: 10px;
-			display: inline-block;
-		}
-		
-		footer{
-			padding: 60px;
-		}
-
-		.footer-links {
-			justify-content: center;
-			display: flex;
-		}
-		.text-box {
-  			background-color: rgba(0, 0, 0, 0.3); 
-  			padding: 20px;
-  			border-radius: 8px; 
-  			display: block;
-  			margin: 20px auto; 
-			width: fit-content;
-			max-width: 800px;
-		}
-		.resume-btn {
-  			display: inline-block;
-  			padding: 10px 20px;
-  			background-color: #3F88C5;  
-  			color: #fff;
-  			text-decoration: none;
-  			border-radius: 6px;
-  			font-weight: bold;
-  			transition: background-color 0.2s ease;
-
-		}
-		.resume-btn:hover {
-  			background-color: #2f6ca3;
-			padding: 10px 20px;
-			display: inline-block; 
-		}
-	</style>
-<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colby Sanders | Portfolio</title>
+    <meta name="description" content="Portfolio website for Colby Sanders, a computer science student focused on cybersecurity, systems, and hands-on technical problem solving.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/site.css">
+    
 </head>
 <body>
-	<header>
-	<nav class="nav">
-    <ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="aboutme.html">About Me</a></li>
-	</ul>
-    </nav>
-	</header>
-		<h1>Portfolio</h1>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <div class="brand">Colby Sanders</div>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-	<main>
-		<div class="text-box">
-			
-		<p>Hello! My name is Colby Sanders and I am a Junior majoring 
-			in Computer Science with a concentration in cybersecurity. Technology has
-		always been a big part of my life, from building my own computer to 
-	troubleshooting technical issues and learning how systems work behind the scenes.</p>
-			<p>I am currently pursuing a Master’s degree in Cybersecurity to deepen my understanding of
-				network defense, data protection, and threat prevention. My goal is to strengthen my
-				technical expertise and prepare for a career focused on safeguarding digital systems and information.</p>
-			</div>
-			
-			<div class="resume" style="text-align: center;">
-			<a href="docs/Colby-Sanders-Resume.pdf" download class="resume-btn">Download Resume</a>
-			</div>
-			
-			<h2>Certifications:</h2>
-			<div class="text-box">
-				<p><a href="https://www.credential.net/cdedf9dd-ec58-490a-b8e5-dd4902ab741e#acc.pxczKB58">
-				Snap AR Lens Challenge</a> - Successfully completed the 2025 Spring Snap Challenge Tags, 
-				demonstrating commitment to revolutionize the way we create, explore, and play through augmented reality.</p>
-				<p><a href="https://www.coursera.org/account/accomplishments/verify/Q8OLG41P4POG">
-					Getting Started with Git and GitHub</a> - covering version control fundamentals, repositories, branching, pull requests, and collaborative development workflows.</p>
-				<p>CompTIA Network+ - In Progess</p>
-			</div>
-	</main>
-	<footer>
-		<ul class="footer-links">
-			<li><a href="https://github.com/ColbyASanders22/ColbyASanders22.github.io">GitHub</a></li>
-			<li><a href="https://colbyasanders22.github.io/">GitHub.io</a></li>
-			<li><a href="www.linkedin.com/in/colby-sandersLinkedIn">LinkedIn</a></li>
-			<li><a href="itis3135/index.html" target="_blank">ITIS 3135</a></li>
-		</ul>
-		
-		<p style="text-align: center;">Designed by © 2025<a href="CSandEnterprises/index.html">CSandEnterprises</a></p>
-	</footer>
+    <main class="page-shell">
+        <section class="hero">
+            <div class="hero-card">
+                <div class="eyebrow">Cybersecurity Path + Computer Science</div>
+                <h1>Building technical skills with a security-first mindset.</h1>
+                <p class="lead">Hello, my name is Colby Sanders. I am a senior majoring in computer science with a concentration in cybersecurity, and I am expected to graduate in Fall 2026. I enjoy learning how systems work behind the scenes.</p>
+                <p>I have always been drawn to technology, whether that meant building my own computer, troubleshooting issues, or figuring out why a system behaves the way it does. That curiosity is what keeps pushing me deeper into networking, defense, and practical problem solving.</p>
+                <div class="hero-actions">
+                    <a href="docs/Colby-Sanders-Resume.pdf" download class="resume-btn">Download Resume</a>
+                    <a href="aboutme.html" class="button button-secondary">More About Me</a>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>Senior</strong>
+                    <p>Computer science senior graduating in Fall 2026 and preparing for a long-term career in cybersecurity.</p>
+                </div>
+                <div class="stat">
+                    <strong>Security</strong>
+                    <p>Focused on network defense, system protection, and learning how threats are prevented.</p>
+                </div>
+                <div class="stat">
+                    <strong>Hands-On</strong>
+                    <p>Interested in practical experience, technical projects, and building stronger real-world skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-grid">
+                <article class="panel">
+                    <div class="eyebrow">Current Focus</div>
+                    <h2>Where I am headed</h2>
+                    <p>I am on track to graduate with my computer science degree in Fall 2026, and after that I will be pursuing a master's degree in cybersecurity with an expected graduation date of Fall 2027. My goal is to deepen my understanding of network defense, data protection, and threat prevention while continuing to strengthen the technical foundation needed for a career protecting digital systems and information.</p>
+                </article>
+                <article class="panel">
+                    <div class="eyebrow">What Drives Me</div>
+                    <h2>Why this field fits me</h2>
+                    <p>I like work that rewards curiosity, patience, and problem solving. Cybersecurity gives me room to think critically, stay adaptable, and keep learning while working on problems that actually matter.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="certifications">
+            <div class="section-grid">
+                <article class="panel">
+                    <div class="eyebrow">Credentials</div>
+                    <h2>Certifications</h2>
+                    <ul class="cert-list">
+                        <li>
+                            <span>Augmented Reality</span>
+                            <h3><a href="https://www.credential.net/cdedf9dd-ec58-490a-b8e5-dd4902ab741e#acc.pxczKB58" target="_blank" rel="noreferrer">Snap AR Lens Challenge</a></h3>
+                            <p>Completed the 2025 Spring Snap Challenge, demonstrating creative problem solving and commitment to emerging technology.</p>
+                        </li>
+                        <li>
+                            <span>Version Control</span>
+                            <h3><a href="https://www.coursera.org/account/accomplishments/verify/Q8OLG41P4POG" target="_blank" rel="noreferrer">Getting Started with Git and GitHub</a></h3>
+                            <p>Covered repository basics, branching, pull requests, and collaborative development workflows.</p>
+                        </li>
+                        <li>
+                            <span>In Progress</span>
+                            <h3>CompTIA Network+</h3>
+                            <p>Currently working toward a stronger networking foundation to support future security-focused work.</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="panel" id="connect">
+                    <div class="eyebrow">Find Me Online</div>
+                    <h2>Connect</h2>
+                    <p>If you want to see more of my work or follow what I am building, these are the best places to start.</p>
+                    <div class="contact-list">
+                        <a href="https://github.com/ColbyASanders22/ColbyASanders22.github.io" target="_blank" rel="noreferrer">GitHub Repository</a>
+                        <a href="https://colbyasanders22.github.io/" target="_blank" rel="noreferrer">Live GitHub Pages Site</a>
+                        <a href="https://www.linkedin.com/in/colby-sanders" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a href="itis3135/index.html" target="_blank" rel="noreferrer">ITIS 3135 Work</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-shell site-footer">
+        <div class="footer-card">
+            <p class="footer-note">Designed by <a href="CSandEnterprises/index.html">CSandEnterprises</a> | 2025</p>
+        </div>
+    </footer>
 </body>
 </html>
+

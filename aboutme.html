@@ -1,68 +1,120 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>About Me</title>
-	<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/aboutme.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Colby Sanders</title>
+    <meta name="description" content="Learn more about Colby Sanders, including academic interests, personal background, and career goals in cybersecurity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/site.css">
+    
 </head>
 <body>
-    <main>
-	<header>
-        <nav>
-        <ul>
-		<li><a href="index.html">Home</a></li>
-		<li><a href="introduction.html">About Me</a></li>
-	</ul>
-    </nav>
-	</header>
-
-    <h1>About Me</h1>
-
-    <div class="text-box">
-    <p>Hello! My name is Colby Sanders and I am a Junior majoring in Computer Science with a concentration in cybersecurity. I am 23 years old and originally from Raleigh, North Carolina. I lived in Charlotte for a year in 2020, then moved back a year ago. After graduating I plan to pursue a Masters Degree in cybersecurity as well.</p>
-    </div>
-
-    <h2>Personal Background</h2>
-    <div class="text-box">
-    <p>Hobbies I enjoy in my free time include going to the gym, walking my dog, playing video games, hanging out with friends, watching sports, watching moves/tv, and more!</p>
-    </div>
-
-    
-    <h2>Professional Background</h2>
-    <div class="text-box">
-    <p>I began my career in 2021 by working at Charlotte Beer Garden and have had various different serving jobs since then. This past summer, I was fortunate enough to have the opportunity to do an Externship with Snapchat that consisted of us creating different AR lenses.</p>
-    </div>
-
-    <h2>Academic Background</h2>
-    <div class="text-box">
-    <p>I am currently a junior and I transferred here from Wake Tech. I am pursuing a major in computer science with a concentration in cybersecurity.</p>
-    </div>
-
-    <h2>Primary Computer</h2>
-    <div class="text-box">
-    <p>My primary computer is a custom built desktop running Windows 11. I typically work from my apartment.</p>
-    </div>
-
-    <h2>Courses I'm taking and why</h2>
-    <div class="Coursetaken">
-    <div class="text-box">
-    <p>ITSC 3146 - Intro Oper Syst & Networking: I am taking this course because I am interested in networking and how everything is interconnected.</p>
-    <p>ITSC 2175 - Logic and Algorithms: I am taking this course because I am curious how algorithms work as they can be extremely useful in real world applications.</p>
-    <p>ITIS 3135 - Front-End Web App Development: I am interested in this because I am interested in making web applications.</p> 
-    <p>ITSC 3160 - Database Design & Implementation: I am taking this course because databases are another extremely useful tool in the real world and it is important to make sure that they are implemented properly.</p>
-    <p>MATH 2164 - Matrices & Linear Algebra: I am taking this course because it is a part of the curriculum. I am not a big math fan, unfortunately.</p>
-    </div>
-    </div>
-
-	<footer>
-        <div class="steve">
-        <p>“The only way to do great work is to love what you do”</p>
-        <p>-Steve Jobs</p>
-        <p>Designed by © 2025 <a href="CSandEnterprises/index.html">CSandEnterprises</a></p>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <div class="brand">Colby Sanders</div>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="aboutme.html">About Me</a></li>
+                </ul>
+            </nav>
         </div>
-	</footer>
+    </header>
+
+    <main class="page-shell">
+        <section class="hero">
+            <div class="hero-card">
+                <div class="eyebrow">About Me</div>
+                <h1>Getting to know the person behind the site.</h1>
+                <p class="lead">I am Colby Sanders, a senior in computer science with a cybersecurity concentration, originally from Raleigh, North Carolina and now based in Charlotte. I am expected to graduate in Fall 2026.</p>
+                <p>I transferred from Wake Tech and have been building toward a career that combines technical curiosity, hands-on problem solving, and long-term growth in cybersecurity. After completing my bachelor's degree, I will be pursuing a master's degree in cybersecurity with an expected graduation date of Fall 2027.</p>
+                <div class="hero-actions">
+                    <a href="index.html" class="button button-secondary">Back to Home</a>
+                    <a href="docs/Colby-Sanders-Resume.pdf" download class="resume-btn">Download Resume</a>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="eyebrow">Quick Snapshot</div>
+                <ul class="course-list">
+                    <li>
+                        <span class="course-code">Location</span>
+                        <p>Originally from Raleigh, North Carolina and currently living in Charlotte.</p>
+                    </li>
+                    <li>
+                        <span class="course-code">Primary Setup</span>
+                        <p>Custom-built desktop running Windows 11.</p>
+                    </li>
+                    <li>
+                        <span class="course-code">Career Direction</span>
+                        <p>Graduating in Fall 2026, then continuing into a master's degree in cybersecurity with a planned Fall 2027 graduation.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-grid">
+                <article class="panel">
+                    <div class="eyebrow">Personal Background</div>
+                    <h2>What I enjoy outside of class</h2>
+                    <p>In my free time I enjoy going to the gym, walking my dog, playing video games, hanging out with friends, and keeping up with sports, movies, and TV.</p>
+                </article>
+                <article class="panel">
+                    <div class="eyebrow">Professional Background</div>
+                    <h2>Work experience so far</h2>
+                    <p>I began working in 2021 at Charlotte Beer Garden and have had several serving jobs since then. More recently, I had the opportunity to complete an externship with Snapchat where we created different AR lenses.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-grid">
+                <article class="panel">
+                    <div class="eyebrow">Academic Background</div>
+                    <h2>My path in school</h2>
+                    <p>I am currently a senior pursuing a computer science degree with a concentration in cybersecurity, with an expected graduation date of Fall 2026. I also plan to pursue a master's degree in cybersecurity and expect to complete that program in Fall 2027. My academic interests are centered around networking, system design, and learning technical skills that have strong real-world value.</p>
+                </article>
+                <article class="panel">
+                    <div class="eyebrow">Course Goals</div>
+                    <h2>Courses I am taking and why</h2>
+                    <ul class="course-list">
+                        <li>
+                            <span class="course-code">ITSC 3146</span>
+                            <p>Intro to Operating Systems and Networking because I am interested in networking and how everything is interconnected.</p>
+                        </li>
+                        <li>
+                            <span class="course-code">ITSC 2175</span>
+                            <p>Logic and Algorithms because I want a better understanding of how algorithms support real-world applications.</p>
+                        </li>
+                        <li>
+                            <span class="course-code">ITIS 3135</span>
+                            <p>Front-End Web App Development because I am interested in building web applications.</p>
+                        </li>
+                        <li>
+                            <span class="course-code">ITSC 3160</span>
+                            <p>Database Design and Implementation because databases are a core tool and should be built correctly.</p>
+                        </li>
+                        <li>
+                            <span class="course-code">MATH 2164</span>
+                            <p>Matrices and Linear Algebra because it is part of the curriculum, even if math is not my favorite subject.</p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
     </main>
+
+    <footer class="page-shell site-footer">
+        <div class="footer-card">
+            <p class="quote">"The only way to do great work is to love what you do."</p>
+            <p class="small-muted">- Steve Jobs</p>
+            <p class="footer-note">Designed by <a href="CSandEnterprises/index.html">CSandEnterprises</a> | 2025</p>
+        </div>
+    </footer>
 </body>
 </html>
+
